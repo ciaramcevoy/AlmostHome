@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="almostHome.master.cs" Inherits="AlmostHome.almostHome" %>
+
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head runat="server"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title></title><meta name="keywords" content="" /><meta name="description" content="" /><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" /><webopt:bundlereference runat="server" path="~/Content/default.css" />
+<webopt:bundlereference runat="server" path="~/Content/fonts.css" />
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../fonts/font-awesome.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header">
+	<div id="menu" class="container">
+		<ul>
+			<li class="current_page_item"><a href="Default.aspx" accesskey="1" title="">Home</a></li>
+			<li><a href="About.aspx" accesskey="1" title="">About Us</a></li>
+			<li><a href="Adopt.aspx" accesskey="2" title="">Adopt</a></li>
+			<li><a href="Volunteer.aspx" accesskey="3" title="">Volunteer</a></li>
+			<li><a href="Login.aspx" accesskey="2" title="">Staff Login</a></li>
+			<li><a href="Contact.aspx" accesskey="5" title="">Contact Us</a></li>
+		</ul>
+	</div>
+</div>
+
+     <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+           <div id="contact" class="container">
+		<div class="major">
+			<h2>Get in touch</h2>
+			<span class="byline">Feel free to contact us any time via our Facebook or Twitter</span>
+		</div>
+		<ul class="contact">
+			<li><a href="https://twitter.com/almosthomeNI" class="icon icon-twitter"><span>Twitter</span></a></li>
+			<li><a href="https://www.facebook.com/Almost-Home-Animal-Rescue-NI-165471356992884/" class="icon icon-facebook"><span></span></a></li>
+
+			
+		</ul>
+</div>
+<div id="copyright" class="container">
+	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+        </div>
+    </body>
+</html>
