@@ -113,16 +113,26 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\material-kit\material-kit.css" />
     <Content Include="Content\wizard\form-elements.css" />
     <Content Include="Content\wizard\style.css" />
     <Content Include="fonts\font-awesome.min.css" />
+    <Content Include="fonts\font-css.css" />
+    <Content Include="fonts\material-font.css" />
     <Content Include="images\Cat1.jpg" />
     <Content Include="images\Hamster.jpg" />
     <Content Include="images\icons\five.svg" />
     <Content Include="images\icons\four.svg" />
     <Content Include="images\icons\one.svg" />
+    <Content Include="images\icons\paw.svg" />
     <Content Include="images\icons\three.svg" />
     <Content Include="images\icons\two.svg" />
+    <Content Include="images\img\main-banner.jpg" />
+    <Content Include="images\img\vol1.jpg" />
+    <Content Include="images\img\vol2.jpg" />
+    <Content Include="images\img\vol3.jpg" />
+    <Content Include="images\img\vol4.jpg" />
+    <Content Include="images\img\vol5.jpg" />
     <Content Include="images\Logo.jpg" />
     <Content Include="images\Rabbit.jpeg" />
     <Content Include="images\Rabbit.jpg" />
@@ -180,6 +190,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Master\Home.Master" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\SearchResults.aspx" />
@@ -187,6 +198,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\material-kit\bootstrap-material-design.min.js" />
+    <Content Include="Scripts\material-kit\material-kit.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -289,6 +302,13 @@
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Master\Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master\Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminPage.aspx.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

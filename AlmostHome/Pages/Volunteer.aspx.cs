@@ -13,5 +13,14 @@ namespace AlmostHome
         {
 
         }
+
+        protected void btnSubmitQuiz_Click(object sender, EventArgs e)
+        {
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string email = txtEmail.Text;
+
+        }
+
     }
 }

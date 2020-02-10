@@ -428,30 +428,15 @@
 		color: #3f3f3f;
 	}
 
-	.column1,
-	.column2,
-	.column3,
-	.column4
+	
+	.column
 	{
-		width: 282px;
+		width: 23%;
+        float: left;
+        margin-right: 2%;
 	}
 	
-	.column1,
-	.column2
-	{
-		float: left;
-		margin-right: 24px;
-	}
 	
-	.column3
-	{
-		float: left;
-	}
-	
-	.column4
-	{
-		float: right;
-	}
 
 /*********************************************************************************/
 /* Portfolio                                                                     */
@@ -536,3 +521,28 @@
     .Grid .pgr a:hover { color: #000; text-decoration: none; }
 
 
+
+
+
+ .logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 1px solid #333333;
+        overflow: hidden;
+        margin-top: -6px;
+ }
+
+.logo img{
+    width: 32px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.main-content{
+    margin-top: 150px;
+}
+
+.carousel-item img {
+    height: 300px !important;
+}
