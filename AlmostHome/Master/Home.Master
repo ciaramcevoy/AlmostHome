@@ -128,7 +128,7 @@
                     document.write(new Date().getFullYear())
                 </script>
                 <i class="ml-2 material-icons">pets</i>
-                <a href="Default.aspx" target="_blank">Almost Home</a> - All Rights Reserved | Powered by weeciaraxx
+                <a href="Default.aspx" target="_blank">Almost Home</a> - All Rights Reserved | Powered by Almost Home Animal Rescue NI
             </div>
         </div>
     </footer>
