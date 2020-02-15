@@ -10,21 +10,21 @@
     <title>Almost Home</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link href="../fonts/font-css.css" rel="stylesheet" />
+    <link href="/fonts/font-css.css" rel="stylesheet" />
     <webopt:BundleReference runat="server" Path="~/Content/default.css" />
     <webopt:BundleReference runat="server" Path="~/Content/fonts.css" />
     <!--     Fonts and icons     -->
-    <link href="../fonts/material-font.css" rel="stylesheet" />
+    <link href="/fonts/material-font.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../fonts/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Content/material-kit/material-kit.css" rel="stylesheet" />
-    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/fonts/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/material-kit/material-kit.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
 
-    <script src="../Scripts/popper.min.js"></script>
-    <script src="../Scripts/bootstrap.min.js"></script>
-    <script src="../Scripts/material-kit/bootstrap-material-design.min.js"></script>
-    <script src="../Scripts/material-kit/material-kit.js"></script>
+    <script src="/Scripts/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/material-kit/bootstrap-material-design.min.js"></script>
+    <script src="/Scripts/material-kit/material-kit.js"></script>
 
     <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -33,7 +33,7 @@
     <nav class="navbar navbar-expand-lg bg-primary fixed-top" id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="Default.aspx"><div class='logo'><img src="../images/icons/paw.svg"/></div><div class="ripple-container"></div>
+                <a class="navbar-brand" href="Default.aspx"><div class='logo'><img src="/images/icons/paw.svg"/></div><div class="ripple-container"></div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="sr-only">Toggle navigation</span>
@@ -45,27 +45,32 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="Default.aspx">
+                        <a class="nav-link" href="/Pages/Admin/Index.aspx">
+                            <i class="material-icons">home</i> Admin
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Pages/Default.aspx">
                             <i class="material-icons">home</i> Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="About.aspx">
+                        <a class="nav-link" href="/Pages/About.aspx">
                             <i class="material-icons">people</i> About Us
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Adopt.aspx">
+                        <a class="nav-link" href="/Pages/Adopt.aspx">
                             <i class="material-icons">pets</i> Adopt
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Volunteer.aspx">
+                        <a class="nav-link" href="/Pages/Volunteer.aspx">
                             <i class="material-icons">pan_tool</i> Volunteer
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Contact.aspx">
+                        <a class="nav-link" href="/Pages/Contact.aspx">
                             <i class="material-icons">phone</i> Contact Us
                         </a>
                     </li>

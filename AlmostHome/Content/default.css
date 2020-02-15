@@ -499,8 +499,8 @@
         .Grid th {
             padding: 4px 2px;
             color: #fff;
-            background: #9999a9;
-            border-left: solid 1px #525252;
+            background-color: #7d7676;
+            border-color: #7d7676;
             font-size: 0.9em;
         }
 
@@ -514,24 +514,32 @@
 
     .Grid .pgr table { margin: 3px 0; }
 
-    .Grid .pgr td { border-width: 0; padding: 0 6px; border-left: solid 1px #666; font-weight: bold; color: #fff; line-height: 12px; }  
+            .Grid .pgr td {
+                border-width: 0;
+                padding: 0 6px;
+                border-left: solid 1px #7d7676;
+                background-color: #7d7676;
+                font-weight: bold;
+                color: #fff;
+                line-height: 12px;
+            }
 
-    .Grid .pgr a { color: Gray; text-decoration: none; }
+            .Grid .pgr a {
+                color: #d2d2d2;
+                text-decoration: none;
+            }
 
     .Grid .pgr a:hover { color: #000; text-decoration: none; }
 
 
-
-
-
- .logo {
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        border: 1px solid #333333;
-        overflow: hidden;
-        margin-top: -6px;
- }
+.logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid #333333;
+    overflow: hidden;
+    margin-top: -6px;
+}
 
 .logo img{
     width: 32px;

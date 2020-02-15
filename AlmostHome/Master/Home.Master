@@ -45,22 +45,27 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="About.aspx">
+                        <a class="nav-link" href="/Pages/Admin/Index.aspx">
+                            <i class="material-icons">home</i> Admin
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Pages/About.aspx">
                             <i class="material-icons">people</i> About Us
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Adopt.aspx">
+                        <a class="nav-link" href="/Pages/Adopt.aspx">
                             <i class="material-icons">pets</i> Adopt
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Volunteer.aspx">
+                        <a class="nav-link" href="/Pages/Volunteer.aspx">
                             <i class="material-icons">pan_tool</i> Volunteer
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Contact.aspx">
+                        <a class="nav-link" href="/Pages/Contact.aspx">
                             <i class="material-icons">phone</i> Contact Us
                         </a>
                     </li>
@@ -128,7 +133,7 @@
                     document.write(new Date().getFullYear())
                 </script>
                 <i class="ml-2 material-icons">pets</i>
-                <a href="Default.aspx" target="_blank">Almost Home</a> - All Rights Reserved | Powered by Almost Home Animal Rescue NI
+                <a href="Default.aspx" target="_blank">Almost Home</a> - All Rights Reserved | Powered by weeciaraxx
             </div>
         </div>
     </footer>

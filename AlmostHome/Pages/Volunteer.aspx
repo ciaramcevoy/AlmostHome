@@ -118,10 +118,7 @@
 
                     <fieldset>
                         <div class="form-group">
-                            <asp:TextBox ID="txtFirstName" runat="server" class="form-control" placeholder="First Name"></asp:TextBox>
-                        </div>
-                        <div class="form-group">
-                            <asp:TextBox ID="txtLastName" runat="server" class="form-control" placeholder="Last Name"></asp:TextBox>
+                            <asp:TextBox ID="txtName" runat="server" class="form-control" placeholder="Name"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="Email"></asp:TextBox>
@@ -205,13 +202,11 @@
                         <div class="f1-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn btn-submit" onclick="submitWizard();">Submit</button>
-                            <asp:Button ID="btnSubmitQuiz" runat="server" Text="Submit" OnClick="btnSubmitQuiz_Click" Visible="False"/>
+                            <asp:Button ID="btnSubmitQuiz" runat="server" Text="Submit" OnClick="btnSubmitQuiz_Click" Visible="True"/>
 
                         </div>
                     </fieldset>
                 </form>
-                
-
             </div>
         </div>
     </div>
