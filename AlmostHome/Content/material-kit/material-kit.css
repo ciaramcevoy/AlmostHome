@@ -5557,7 +5557,7 @@ button.close {
   outline: 0;
 }
 
-.modal-backdrop {
+/*.modal-backdrop {
   position: fixed;
   top: 0;
   right: 0;
@@ -5565,7 +5565,7 @@ button.close {
   left: 0;
   z-index: 1040;
   background-color: #000000;
-}
+}*/
 
 .modal-backdrop.fade {
   opacity: 0;
@@ -10915,11 +10915,11 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
   margin: 0;
 }
 
-body {
+/*body {
   background-color: #eee;
   color: #3C4858;
   font-weight: 300;
-}
+}*/
 
 legend {
   border-bottom: 0;
@@ -10960,7 +10960,7 @@ a .material-icons {
 .main {
   background: #FFFFFF;
   position: relative;
-  z-index: 3;
+  /*z-index: 3;*/
 }
 
 .form-check,

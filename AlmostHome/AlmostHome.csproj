@@ -300,7 +300,9 @@
     <Content Include="Pages\Volunteer.aspx" />
     <Content Include="Scripts\wizard\jquery.backstretch.js" />
     <Content Include="Scripts\wizard\scripts.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>

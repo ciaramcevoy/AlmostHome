@@ -19,8 +19,8 @@
     <link href="/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="/fonts/font-awesome.min.css" rel="stylesheet" />
     <link href="/Content/material-kit/material-kit.css" rel="stylesheet" />
-    <script src="/Scripts/jquery-3.3.1.min.js"></script>
 
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
     <script src="/Scripts/popper.min.js"></script>
     <script src="/Scripts/bootstrap.min.js"></script>
     <script src="/Scripts/material-kit/bootstrap-material-design.min.js"></script>
@@ -30,106 +30,107 @@
 
 </head>
 <body class="index-page sidebar-collapse">
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top" id="sectionsNav">
-        <div class="container">
-            <div class="navbar-translate">
-                <a class="navbar-brand" href="Default.aspx"><div class='logo'><img src="/images/icons/paw.svg"/></div><div class="ripple-container"></div>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/Admin/Index.aspx">
-                            <i class="material-icons">home</i> Admin
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/Default.aspx">
-                            <i class="material-icons">home</i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/About.aspx">
-                            <i class="material-icons">people</i> About Us
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/Adopt.aspx">
-                            <i class="material-icons">pets</i> Adopt
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/Volunteer.aspx">
-                            <i class="material-icons">pan_tool</i> Volunteer
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Pages/Contact.aspx">
-                            <i class="material-icons">phone</i> Contact Us
-                        </a>
-                    </li>
-
-                    <li class="dropdown nav-item">
-                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="material-icons">person_pin_circle</i> Login
-                        </a>
-                        <div class="dropdown-menu dropdown-with-icons">
-                            <a href="Login.aspx" class="dropdown-item">
-                                <i class="material-icons">person</i> Login
-                            </a>
-                            <a href="Default.aspx" class="dropdown-item">
-                                <i class="material-icons">content_paste</i> Documentation
-                            </a>
+    <form runat="server">
+        <nav class="navbar navbar-expand-lg bg-primary fixed-top" id="sectionsNav">
+            <div class="container">
+                <div class="navbar-translate">
+                    <a class="navbar-brand" href="Default.aspx">
+                        <div class='logo'>
+                            <img src="/images/icons/paw.svg" />
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/almosthomeNI" target="_blank" data-original-title="Follow us on Twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/Almost-Home-Animal-Rescue-NI-165471356992884" target="_blank" data-original-title="Like us on Facebook">
-                            <i class="fa fa-facebook-square"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com" target="_blank" data-original-title="Follow us on Instagram">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
+                        <div class="ripple-container"></div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Pages/Admin/Index.aspx">
+                                <i class="material-icons">home</i> Admin
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Pages/Default.aspx">
+                                <i class="material-icons">home</i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Pages/About.aspx">
+                                <i class="material-icons">people</i> About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Pages/Adopt.aspx">
+                                <i class="material-icons">pets</i> Adopt
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Pages/Volunteer.aspx">
+                                <i class="material-icons">pan_tool</i> Volunteer
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Pages/Contact.aspx">
+                                <i class="material-icons">phone</i> Contact Us
+                            </a>
+                        </li>
+
+                        <li class="dropdown nav-item">
+                            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                <i class="material-icons">person_pin_circle</i> Login
+                            </a>
+                            <div class="dropdown-menu dropdown-with-icons">
+                                <a href="Login.aspx" class="dropdown-item">
+                                    <i class="material-icons">person</i> Login
+                                </a>
+                                <a href="Default.aspx" class="dropdown-item">
+                                    <i class="material-icons">content_paste</i> Documentation
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/almosthomeNI" target="_blank" data-original-title="Follow us on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/Almost-Home-Animal-Rescue-NI-165471356992884" target="_blank" data-original-title="Like us on Facebook">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com" target="_blank" data-original-title="Follow us on Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main main-raised">
+            <div class="container">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
             </div>
         </div>
-    </nav>
-
-    <div class="main main-raised">
-        <div class="container">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </div>
-</div>
-
-
+    </form>
     <footer class="footer" data-background-color="black">
         <div class="container">
             <div class="copyright">
                 ©
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
                 <i class="ml-2 material-icons">pets</i>
                 <a href="Default.aspx" target="_blank">Almost Home</a> - All Rights Reserved | Powered by weeciaraxx
             </div>
         </div>
     </footer>
-    
-
 </body>
 </html>

@@ -93,21 +93,21 @@ jQuery(document).ready(function() {
     });
     
     // submit
-    $('.f1').on('submit', function(e) {
+    //$('.f1').on('submit', function(e) {
     	
-    	// fields validation
-    	$(this).find('input[type="text"], input[type="password"], textarea').each(function() {
-    		if( $(this).val() == "" ) {
-    			e.preventDefault();
-    			$(this).addClass('input-error');
-    		}
-    		else {
-    			$(this).removeClass('input-error');
-    		}
-    	});
-    	// fields validation
+    //	// fields validation
+    //	$(this).find('input[type="text"], input[type="password"], textarea').each(function() {
+    //		if( $(this).val() == "" ) {
+    //			e.preventDefault();
+    //			$(this).addClass('input-error');
+    //		}
+    //		else {
+    //			$(this).removeClass('input-error');
+    //		}
+    //	});
+    //	// fields validation
     	
-    });
+    //});
     
     
 });

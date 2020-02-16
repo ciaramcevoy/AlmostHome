@@ -5,12 +5,7 @@
     <link href="../Content/wizard/style.css" rel="stylesheet" />
     <script src="../Scripts/wizard/jquery.backstretch.js"></script>
     <script src="../Scripts/wizard/scripts.js"></script>
-    <script type="text/javascript">
-        function submitWizard() {
-            document.getElementById("<%=btnSubmitQuiz.ClientID%>").click();
-        }
 
-    </script>
     <div class="container main-content">
         <div class="row card-body">
             <div class="col-12">
@@ -80,7 +75,7 @@
 
         <div class="row wizard">
             <div class="col-sm-10 col-md-12 col-lg-12 form-box">
-                <form role="form" action="" method="post" class="f1" runat="server">
+                <div class="f1">
                     <h3 class="title">Volunteer To Help</h3>
                     <div class="f1-steps">
                         <div class="f1-progress">
@@ -201,13 +196,87 @@
                         </div>
                         <div class="f1-buttons">
                             <button type="button" class="btn btn-previous">Previous</button>
-                            <button type="button" class="btn btn-submit" onclick="submitWizard();">Submit</button>
-                            <asp:Button ID="btnSubmitQuiz" runat="server" Text="Submit" OnClick="btnSubmitQuiz_Click" Visible="True"/>
+                            <%--<button type="button" class="btn btn-submit" onclick="submitWizard();">Submit</button>--%>
+                            <asp:Button ID="btnSubmitQuiz" runat="server" Text="Submit" OnClick="btnSubmitQuiz_Click" CssClass="btn btn-submit" />
 
                         </div>
                     </fieldset>
-                </form>
+                </div>
             </div>
         </div>
+        <asp:Panel runat="server" ID="panelPopup" Visible="false">
+            <div class="modal fade" id="volunteerModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title card-title"><asp:Label ID="lblPopupHeader" runat="server" Text=""></asp:Label></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Panel ID="panelBody" runat="server" Visible="False">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="small">Contact Number</div>
+                                        <asp:TextBox ID="txtContactNumber" runat="server" Visible="False" class="form-control"></asp:TextBox>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="small">Preferred Unit</div>
+                                        <asp:DropDownList ID="ddlPreferredUnit" class="form-control"  runat="server" Visible="False"></asp:DropDownList>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="small">Availability</div>
+                                        <asp:DropDownList ID="ddlAvailability" class="form-control" runat="server" Visible="False">
+                                            <asp:ListItem Text="Submitted" Value="0"></asp:ListItem>
+                                            <asp:ListItem Text="Successful" Value="1"></asp:ListItem>
+                                            <asp:ListItem Text="Waiting list" Value="2"></asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                </div>
+                            </asp:Panel>
+                            <asp:Label ID="lblPopupBody" runat="server" Text="" Visible="False"></asp:Label>
+
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="btnOk" runat="server" type="button" Text="OK" class="btn btn-default" data-dismiss="modal"/>
+                            <asp:Button ID="btnSubmitApplication" runat="server" type="button" Text="Submit" class="btn btn-default" OnClick="btnSubmitApplication_Click" />
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </asp:Panel>
+        <%--Mesage Box Popup --%>
+        <asp:Panel runat="server" ID="panelMsgPopup" Visible="false">
+            <div class="modal fade" id="msgModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title card-title"><asp:Label ID="Label1" runat="server" Text=""></asp:Label></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="lblMsgBody" runat="server" Text=""></asp:Label>
+
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="Button1" runat="server" type="button" Text="OK" class="btn btn-default" data-dismiss="modal"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </asp:Panel>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#volunteerModal").modal('show');
+            $("#msgModal").modal('show');
+        });
+    </script>
 </asp:Content>
