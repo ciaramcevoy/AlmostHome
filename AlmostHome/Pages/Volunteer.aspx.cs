@@ -2,7 +2,11 @@
 using AlmostHome.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,10 +17,13 @@ namespace AlmostHome
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
+            if (!IsPostBack)
+            {
                 
-            //}
+            }
+            panelPopup.Visible = false;
+            panelMsgPopup.Visible = false;
+
         }
 
         protected void btnSubmitQuiz_Click(object sender, EventArgs e)
@@ -138,9 +145,14 @@ namespace AlmostHome
                 volunteerApplication.ContactNumber = Convert.ToInt32(txtContactNumber.Text);
                 volunteerApplication.EmailAddress = txtEmail.Text;
                 FuncVolunteerApplication.SaveVolunteerApplication(volunteerApplication);
-                ClearAll();
-                lblMsgBody.Text = "Application Sent Successfully";
+               
+                //send email
+                string message = "Thank you for applying. We will be in touch with you shortly.";
+                SendEmail(volunteerApplication.EmailAddress, "Volunteer Application", PopulateBody(volunteerApplication.VolunteerName.Split(' ')[0], message));
+
+                lblMsgBody.Text = "Application Submitted!";
                 panelMsgPopup.Visible = true;
+                ClearAll();
 
             }
             catch (Exception ex)
@@ -169,5 +181,75 @@ namespace AlmostHome
             RadioQ5.SelectedIndex = -1;
 
         }
+
+        private string PopulateBody(string receiverName, string description)
+        {
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader(Server.MapPath("/Pages/Email/EmailTemplate.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{UserName}", receiverName);
+            body = body.Replace("{Description}", description);
+            return body;
+        }
+
+        private void SendEmail(string recepientEmail, string subject, string body)
+        {
+            using (MailMessage mailMessage = new MailMessage())
+            {
+                mailMessage.From = new MailAddress(ConfigurationManager.AppSettings["UserName"]);
+                mailMessage.Subject = subject;
+                mailMessage.Body = body;
+                mailMessage.IsBodyHtml = true;
+                mailMessage.To.Add(new MailAddress(recepientEmail));
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = ConfigurationManager.AppSettings["Host"];
+                smtp.EnableSsl = Convert.ToBoolean(ConfigurationManager.AppSettings["EnableSsl"]);
+                System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
+                NetworkCred.UserName = ConfigurationManager.AppSettings["UserName"];
+                NetworkCred.Password = ConfigurationManager.AppSettings["Password"];
+                smtp.UseDefaultCredentials = true;
+                smtp.Credentials = NetworkCred;
+                smtp.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+                smtp.Send(mailMessage);
+            }
+        }
+
+        //public void SendEmail()
+        //{
+        //    // creating from to addresses
+        //    MailAddress to = new MailAddress("autocarebookings@gmail.com");
+        //    MailAddress from = new MailAddress("almosthomestatusapplication@gmail.com");
+
+        //    MailMessage message = new MailMessage(from, to);
+        //    message.Subject = "AutoCare Contact";
+
+        //    // creating email body
+        //    string BodyMsg = "We have received a contact from AutoCare website.\n\n";
+        //    BodyMsg += "Name: " + ContactName.Text + "\n";
+        //    BodyMsg += "Email: " + Email.Text + "\n\n";
+        //    BodyMsg += "Subject: " + Subject.Text + "\n";
+        //    BodyMsg += "Message: " + Message.Text + "\n\n";
+        //    BodyMsg += "Thank you!";
+        //    //Thank you for applying. We will be in touch with you shortly.
+        //    message.Body = BodyMsg;
+
+        //    // set Email server and creditials
+        //    SmtpClient client = new SmtpClient("smtp.gmail.com", 587)
+        //    {
+        //        Credentials = new NetworkCredential("almosthomestatusapplication@gmail.com", "Almosthome1"),
+        //        EnableSsl = true
+        //    };
+
+        //    try
+        //    {
+        //        // sending email message
+        //        client.Send(message);
+        //    }
+        //    catch (SmtpException ex)
+        //    {
+        //    }
+        //}
     }
 }
