@@ -308,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\DBCon.cs" />
+    <Compile Include="Common\Email.cs" />
     <Compile Include="Functions\FuncAdmin.cs" />
     <Compile Include="Functions\FuncVolunteerApplication.cs" />
     <Compile Include="Master\Home.Master.cs">

@@ -54,5 +54,39 @@ namespace AlmostHome.Functions
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public static VolunteerApplication GetVolunteerApplicationByID(int volunteerApplicationID)
+        {
+            //declare object 
+            VolunteerApplication volunteerApplication = new VolunteerApplication();
+            //getting the database connectivity
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            //set command type as stored procedure
+            SqlCommand cmd = new SqlCommand("sp_get_VolunteerApplication", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            // Passing parameters
+            cmd.Parameters.AddWithValue("VolunteerApplicationID", volunteerApplicationID);
+
+            con.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                //reads and set values to object
+                volunteerApplication.VolunteerApplicationID = Convert.ToInt32(rd["VolunteerApplicationID"]);
+                volunteerApplication.ApplicationDate = Convert.ToDateTime(rd["ApplicationDate"].ToString());
+                volunteerApplication.VolunteerName = rd["VolunteerName"].ToString();
+                volunteerApplication.ContactNumber = Convert.ToInt32(rd["ContactNumber"].ToString());
+                volunteerApplication.EmailAddress = rd["EmailAddress"].ToString();
+                volunteerApplication.Availability = Convert.ToInt32(rd["Availability"].ToString());
+                volunteerApplication.PreferredUnit = Convert.ToInt32(rd["PreferredUnit"].ToString());
+                volunteerApplication.Status = Convert.ToInt32(rd["Status"].ToString());
+
+            }
+            rd.Close();
+            con.Close();
+            return volunteerApplication;
+        }
     }
 }

@@ -50,12 +50,21 @@ namespace AlmostHome.Pages.Admin
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DropDownList dropDownList = sender as DropDownList;
-            GridViewRow row = (GridViewRow)dropDownList.Parent.Parent;
-            int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
-            int rowIndex = row.RowIndex;
-            int volunteerApplicationID = Convert.ToInt32(gvVolunteerApplication.DataKeys[rowIndex].Values[0]);
-            FuncAdmin.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue);
+            try
+            {
+                DropDownList dropDownList = sender as DropDownList;
+                GridViewRow row = (GridViewRow) dropDownList.Parent.Parent;
+                int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
+                int rowIndex = row.RowIndex;
+                int volunteerApplicationID = Convert.ToInt32(gvVolunteerApplication.DataKeys[rowIndex].Values[0]);
+                FuncAdmin.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue);
+                FuncAdmin.SendEmailToApplicant(volunteerApplicationID, selectedValue);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
         
        
