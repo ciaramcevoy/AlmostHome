@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="AlmostHome.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
+  
         <br />
 
         <table style="width: 100%;">
@@ -45,6 +45,6 @@
                
             </tr>
         </table>
-    </form>
+  
 </asp:Content>
 

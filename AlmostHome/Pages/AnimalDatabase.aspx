@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Animal Database</h2>
-    <form runat="server">
+  
         <asp:GridView ID="GridAnimalDb" runat="server" AutoGenerateColumns="False" CssClass="Grid" Width="100%">
             <Columns>
                 <asp:BoundField DataField="AnimalType" HeaderText="Type" SortExpression="AnimalType" />
@@ -17,6 +17,6 @@
                 </asp:ImageField>
             </Columns>
         </asp:GridView>
-    </form>
+
 
 </asp:Content>

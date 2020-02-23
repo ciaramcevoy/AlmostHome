@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
+    
 
         <style>
             input[type=text], select {
@@ -90,6 +90,6 @@
         <br />
         <asp:Button ID="SearchBtn" runat="server" OnClick="Button1_Click1" Text="Search" />
 
-    </form>
+   
 
 </asp:Content>

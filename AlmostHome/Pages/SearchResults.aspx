@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="SearchResults.aspx.cs" Inherits="AlmostHome.Pages.SearchResults" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
+  
         <div style="text-align: center">
         <asp:GridView ID="GridViewResult" runat="server" AutoGenerateColumns="False" CssClass="Grid" >
             <Columns>
@@ -19,6 +19,6 @@
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [AnimalType], [AnimalName], [AnimalAge], [Children], [SecureGarden], [OtherPets] FROM [Animal]" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
         <br />
-    </form>
+   
 </asp:Content>
 

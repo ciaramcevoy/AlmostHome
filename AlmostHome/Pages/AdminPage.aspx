@@ -2,11 +2,11 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
-    <form runat="server">
+    
         <asp:Button ID="btnAnimalDb" runat="server" Text="Animal Database" OnClick="btnAnimalDb_Click" />
         <asp:Button ID="btnAnimalApp" runat="server" Text="Animal Application" />
         <asp:Button ID="btnVolunteerApp" runat="server" Text="Volunteer Application" />
-    </form>
+   
 
     <style>
         input[type=submit] {
