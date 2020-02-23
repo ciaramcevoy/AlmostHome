@@ -43,5 +43,19 @@ namespace AlmostHome.Common
                 smtp.Send(mailMessage);
             }
         }
+
+        public static string PopulateContactUsMailBody(string contactName, string email, string contactNumber, string message)
+        {
+            string body = string.Empty;
+            using (StreamReader reader = new StreamReader(HttpContext.Current.Server.MapPath("/Pages/Email/ContactUsTemplate.html")))
+            {
+                body = reader.ReadToEnd();
+            }
+            body = body.Replace("{ContactName}", contactName);
+            body = body.Replace("{ContactEmail}", email);
+            body = body.Replace("{ContactNumber}", contactNumber);
+            body = body.Replace("{Message}", message);
+            return body;
+        }
     }
 }

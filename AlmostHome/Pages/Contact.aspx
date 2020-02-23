@@ -1,86 +1,120 @@
 ﻿<%@ Page Title="Contact Us" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="AlmostHome.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   
-    <form id="form1" runat="server">
-   
-    <h3>Contact Us</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr> 07922921852</address>
-
-    <div id="googleMap" style="width:100%;height:400px;"></div>
-
-
-<script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(54.465,-6.1937),
-  zoom:5,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtRX9MC_qhr0jpulgg3h0woWupM1c1iRA&callback=myMap"></script>
-
-    <address>
-        <span style="font-weight: bold">Email Address:</span>   <a href="mailto:almosthomeadopt@gmail.com">almosthomeadopt@gmail.com</a></address>
-        <address>
-            &nbsp;</address>
-        <webopt:bundlereference runat="server" path="~/Content/default.css" ID="bundlereference1" />
-<webopt:bundlereference runat="server" path="~/Content/fonts.css" ID="bundlereference2" />
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
-
-    <br />
-    <br />
-        <section id="Contact">
-    <div class="container">
-    	<div class="row">
-    	    <div class="col-xs-12" style="left: 0px; top: 5px">
-        	    <div class="form-wrap">
-                
-                        <div class="form-group">
-                            <label for="FullName" class="sr-only">Full Name</label>
-                             <asp:TextBox ID="TextBox3" runat="server" class="form-control" >Full Name</asp:TextBox>
+    <div class="container main-content">
+        <div class="section text-center">
+            <div class="row">
+                <div class="card-body">
+                    <h3 class="title">Contact Almost Home NI</h3>
+                    <div class="row pb-3">
+                    <asp:Panel ID="panelError" runat="server" Visible="False" CssClass="panel-center">
+                        <div class="error-msg">
+                            <i class="fa fa-times-circle"></i>
+                            <asp:Label ID="lblError" runat="server"></asp:Label>
                         </div>
-                        <div class="form-group">
-                            <label for="key" class="sr-only">Email</label>
-                              <asp:TextBox ID="TextBox4" runat="server" class="form-control">Email</asp:TextBox>
+                    </asp:Panel>
+                    <asp:Panel ID="panelSuccess" runat="server" Visible="False" CssClass="panel-center">
+                        <div class="success-msg">
+                            <i class="fa fa-check"></i>
+                            <asp:Label ID="lblSuccess" runat="server"></asp:Label>
                         </div>
-        	    </div>
-    		</div> <!-- /.col-xs-12 -->
-    	    <div class="col-xs-12" style="left: 0px; top: 5px">
-        	    <div class="form-wrap">
-                
-                        <div class="form-group">
-                            <label for="Contact Number" class="sr-only">Contact Number</label>
-                             <asp:TextBox ID="TextBox6" runat="server" class="form-control" >Contact Number</asp:TextBox>
+                    </asp:Panel>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">person</i>
+                                    </span>
+                                </div>
+                                <asp:TextBox runat="server" ID="txtContactName" CssClass="form-control" TextMode="SingleLine" placeholder="Name" />
+                            </div>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContactName"
+                                CssClass="text-danger" ErrorMessage="Name is required." />
                         </div>
-                        <div class="form-group">
-                            <label for="key" class="sr-only">Password</label>
-                              <br />
-                            <textarea id="TextArea1" name="S1" style="width: 268px; height: 74px"></textarea></div>
-        	    </div>
-    		</div> 
-    	</div> <!-- /.row -->
-    </div> <!-- /.container -->
-</section>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">mail</i>
+                                    </span>
+                                </div>
+                                <asp:TextBox runat="server" ID="txtEmail" CssClass="form-control" TextMode="Email" placeholder="Email" />
+                            </div>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtEmail"
+                                CssClass="text-danger" ErrorMessage="Email is required." />
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">phone</i>
+                                    </span>
+                                </div>
+                                <asp:TextBox runat="server" ID="txtContactNumber" CssClass="form-control" TextMode="Number" placeholder="Contact Number" />
+                            </div>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContactNumber"
+                                CssClass="text-danger" ErrorMessage="Contact Number is required." />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="material-icons">subject</i>
+                                    </span>
+                                </div>
+                                <asp:TextBox runat="server" ID="txtSubject" CssClass="form-control" TextMode="SingleLine" placeholder="Subject" />
 
+                            </div>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtSubject"
+                                CssClass="text-danger" ErrorMessage="Subject is required." />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" style="visibility: hidden">
+                                        <i class="material-icons">message</i>
+                                    </span>
+                                </div>
+                                <asp:TextBox runat="server" ID="txtMessage" CssClass="form-control" TextMode="MultiLine" placeholder="Message" Rows="10" />
 
-        <address>
-                    
+                            </div>
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtMessage"
+                                CssClass="text-danger" ErrorMessage="Message is required." />
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="col-md-12">
+                        <asp:Button runat="server" Text="Send Message" CssClass="btn btn-default" OnClick="SendContactUsEmail" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section text-center">
+            <div class="row">
+                <div class="col-md-9">
+                    <iframe width="100%" height="400" frameborder="0" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJR7FVWEP9YEgREEK9WBg4z4M&key=AIzaSyAr923H27qKCWJFpQ-p4MOPqQaKKoSwvT0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-3">
+                    <address>
+                        6 Grovehill Road<br />
+                        Moira<br />
+                        Craigavon, UK<br />
+                        <br />
+                        Phone: 07922921852<br />
+                        <br />
+                        Email: <a href="mailto:almosthomeadopt@gmail.com">almosthomeadopt@gmail.com</a>
                     </address>
-        <address>
-            &nbsp;</address>
-        <address>
-            <br />
-    </address>
-
-    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
 
 
 
-       

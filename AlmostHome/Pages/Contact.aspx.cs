@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AlmostHome.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,37 @@ namespace AlmostHome
         {
 
         }
+
+        protected void SendContactUsEmail(object sender, EventArgs e)
+        {
+            try
+            {
+                //send email
+                string emailBody = Email.PopulateContactUsMailBody(txtContactName.Text, txtEmail.Text, txtContactNumber.Text, txtMessage.Text);
+                Email.SendEmail("almosthomestatusapplication@gmail.com", txtSubject.Text, emailBody);
+                ShowSuccessMessage("Your message has been successfully sent.");
+
+            }
+            catch (Exception ex)
+            {
+                ShowError(ex.Message);
+            }
+            
+        }
+
+        public void ShowError(string errorMessage)
+        {
+            panelSuccess.Visible = false;
+            lblError.Text = errorMessage;
+            panelError.Visible = true;
+        }
+
+        public void ShowSuccessMessage(string message)
+        {
+            panelError.Visible = false;
+            lblSuccess.Text = message;
+            panelSuccess.Visible = true;
+        }
+
     }
 }
