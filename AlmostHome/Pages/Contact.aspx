@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    
-   
+    <form id="form1" runat="server">
    
     <h3>Contact Us</h3>
     <address>
@@ -78,7 +78,7 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
             <br />
     </address>
 
-   
+    </form>
 </asp:Content>
 
 
