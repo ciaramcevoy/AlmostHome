@@ -569,3 +569,38 @@
         color: #270;
         background-color: #DFF2BF;
     }
+
+.container .panel-center {
+    margin: auto;
+}
+
+
+.list-view-filter li {
+    background-color: #6f6b6b;
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    cursor:pointer;
+}
+    .list-view-filter li:hover {
+        background-color: #423232;
+    }
+    .list.list-view-filter {
+        flex-direction: column;
+    }
+
+    .list.list-view-filter li {
+        padding: 10px;
+    }
+
+    .list.grid-view-filter {
+        flex-flow: row wrap;
+    }
+
+    .list.grid-view-filter li {
+        width: calc(50% - 210px);
+        padding: 100px;
+        margin-right: 10px;
+        text-align: center;
+    }

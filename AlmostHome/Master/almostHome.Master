@@ -20,12 +20,7 @@
     <link href="/fonts/font-awesome.min.css" rel="stylesheet" />
     <link href="/Content/material-kit/material-kit.css" rel="stylesheet" />
 
-    <script src="/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="/Scripts/popper.min.js"></script>
-    <script src="/Scripts/bootstrap.min.js"></script>
-    <script src="/Scripts/material-kit/bootstrap-material-design.min.js"></script>
-    <script src="/Scripts/material-kit/material-kit.js"></script>
-
+    
     <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -139,5 +134,11 @@
             </div>
         </div>
     </footer>
+<script src="/Scripts/jquery-3.3.1.min.js"></script>
+<script src="/Scripts/popper.min.js"></script>
+<script src="/Scripts/bootstrap.min.js"></script>
+<script src="/Scripts/material-kit/bootstrap-material-design.min.js"></script>
+<script src="/Scripts/material-kit/material-kit.js"></script>
+
 </body>
 </html>

@@ -3,9 +3,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link href="../Content/wizard/form-elements.css" rel="stylesheet" />
     <link href="../Content/wizard/style.css" rel="stylesheet" />
-    <script src="../Scripts/wizard/jquery.backstretch.js"></script>
-    <script src="../Scripts/wizard/scripts.js"></script>
-
     <div class="container main-content">
         <div class="row card-body">
             <div class="col-12">
@@ -272,7 +269,9 @@
             </div>
         </asp:Panel>
     </div>
-
+<script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/wizard/jquery.backstretch.js"></script>
+    <script src="../Scripts/wizard/scripts.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("#volunteerModal").modal('show');

@@ -21,5 +21,19 @@
                 </li>
             </ul>
         </div>
+        <div class="row card-body">
+            <ul class="nav nav-pills nav-pills-icons">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Pages/Admin/AnimalSetup.aspx" aria-selected="false">
+                        <i class="material-icons">pets</i> Animal Setup
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Pages/Admin/AnimalTypeSetup.aspx" aria-selected="false">
+                        <i class="material-icons">library_books</i> Animal Type Setup
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </asp:Content>

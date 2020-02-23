@@ -8,6 +8,8 @@ using AlmostHome;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using AlmostHome.Common;
+using AlmostHome.Models;
 
 namespace AlmostHome
 {
@@ -15,17 +17,14 @@ namespace AlmostHome
     {
       protected void Page_Load(object sender, EventArgs e)
       {
-
             if (!Page.IsPostBack)
             {
-                //bind data to animal age dropdown list
-                BindAgeDropdownList();
-                LblSearchMessage.Text = "";
+                BindAnimalTypes();
             }
         }
 
 
-        protected void Button1_Click1(object sender, EventArgs e)
+        protected void SearchAnimals(object sender, EventArgs e)
         {
             //get connection string from the config file
             string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -45,11 +44,11 @@ namespace AlmostHome
                 //sql command object - to send query to the database
                 SqlCommand cmd = new SqlCommand(query, con);
                 //search criterias are added as parameters
-                cmd.Parameters.AddWithValue("@animalType", DropDownList1.SelectedValue);
-                cmd.Parameters.AddWithValue("@animalAge", DropDownList2.SelectedValue);
-                cmd.Parameters.AddWithValue("@children", DropDownList3.SelectedValue.Trim());
-                cmd.Parameters.AddWithValue("@secureGarden ", DropDownList4.SelectedValue.Trim());
-                cmd.Parameters.AddWithValue("@otherPets", DropDownList5.SelectedValue.Trim());
+                cmd.Parameters.AddWithValue("@animalType", ddlAnimalType.SelectedValue);
+                cmd.Parameters.AddWithValue("@animalAge", ddlAnimalAge.SelectedValue);
+                cmd.Parameters.AddWithValue("@children", ddlChildren.SelectedValue.Trim());
+                cmd.Parameters.AddWithValue("@secureGarden ", ddlSecureGarden.SelectedValue.Trim());
+                cmd.Parameters.AddWithValue("@otherPets", ddlOtherPets.SelectedValue.Trim());
 
                 //read for the data using sql adapter object
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -88,13 +87,14 @@ namespace AlmostHome
             }
 
         }
-        public void BindAgeDropdownList()
-        {
-            DropDownList2.Items.Add(new ListItem("0-3", "1"));
-            DropDownList2.Items.Add(new ListItem("3-6", "2"));
-            DropDownList2.Items.Add(new ListItem("6+", "3"));
-        }
 
+        public void BindAnimalTypes()
+        {
+            ddlAnimalType.DataSource = AnimalType.GetAnimalType();
+            ddlAnimalType.DataValueField = "AnimalTypeID";
+            ddlAnimalType.DataTextField = "Type";
+            ddlAnimalType.DataBind();
+        }
 
     }
 }

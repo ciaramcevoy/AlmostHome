@@ -7,72 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmostHome {
+namespace AlmostHome.Pages.Admin {
     
     
-    public partial class Adopt {
+    public partial class AnimalTypeSetup {
         
         /// <summary>
-        /// ddlAnimalType control.
+        /// panelError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAnimalType;
+        protected global::System.Web.UI.WebControls.Panel panelError;
         
         /// <summary>
-        /// ddlAnimalAge control.
+        /// lblError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAnimalAge;
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// ddlChildren control.
+        /// panelSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlChildren;
+        protected global::System.Web.UI.WebControls.Panel panelSuccess;
         
         /// <summary>
-        /// ddlSecureGarden control.
+        /// lblSuccess control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSecureGarden;
+        protected global::System.Web.UI.WebControls.Label lblSuccess;
         
         /// <summary>
-        /// ddlOtherPets control.
+        /// txtAnimalType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlOtherPets;
+        protected global::System.Web.UI.WebControls.TextBox txtAnimalType;
         
         /// <summary>
-        /// LblSearchMessage control.
+        /// RequiredFieldValidatorType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSearchMessage;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorType;
         
         /// <summary>
-        /// SearchBtn control.
+        /// btnSaveAnimalType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SearchBtn;
+        protected global::System.Web.UI.WebControls.Button btnSaveAnimalType;
+        
+        /// <summary>
+        /// lstType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lstType;
     }
 }
