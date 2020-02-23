@@ -8,6 +8,8 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Web.Security;
 using System.Data;
+using AlmostHome.Common;
+using AlmostHome.Models;
 
 namespace AlmostHome
 {
@@ -20,69 +22,39 @@ namespace AlmostHome
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
-            //get connection string from the config file
-            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            //sql connection object initilisation
-            SqlConnection con = new SqlConnection(connectionString);
 
             try
             {
-                string username = usernameTxt.Text;
-                string password = passwordTxt.Text;
+                // creating blank object of Admin
+                AdminModel adminModel = null;
 
-                //select query string
-                string query = "select * from Admin where Username=@username and Password=@password";
+                // filling admin object
+                adminModel = AdminModel.Login(txtUsername.Text, txtPassword.Text);
 
-                //open the connection to the database
-                con.Open();
-
-                //select sql command object to send query to the database
-                SqlCommand cmd = new SqlCommand(query, con);
-
-                //username and password are added as parameters
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-
-                //check for the data
-                SqlDataAdapter sda = new SqlDataAdapter(cmd); 
-                DataTable dt = new DataTable();
-
-                //fill the table
-                sda.Fill(dt);
-                
-              
-                if (dt.Rows.Count > 0)
-                {  //if data row count is greater than 0 (which means there is valid data), then redirect admin to admin page
-                    Response.Redirect("AdminPage.aspx");
+                if (adminModel == null)
+                {
+                    // if admin object is not filled, displaying invalid login details message
+                    ShowError("Invalid Username or Password.");
                 }
                 else
                 {
-                    //if not show error message in the label
-                    LblLoginMessage.Text = "Your Username or Password is incorrect. Please try again.";
-                    LblLoginMessage.ForeColor = System.Drawing.Color.Red;
-
+                    // if login success, stores admin object into a session and redirects to Admin page
+                    Session["Admin"] = adminModel;
+                    Response.Redirect("/Pages/Admin/Index");
                 }
-
-                
-
             }
             catch (Exception ex)
             {
-                //if there are any system errors the below error message will appear
-                LblLoginMessage.Text = "Login Page Error.";
-                LblLoginMessage.ForeColor = System.Drawing.Color.Red;
+                // displays error messsage
+                ShowError(ex.Message);
             }
-            finally
-            {
-                //close connection
-                con.Close();
 
-            }
         }
 
-        protected void usernameTxt_TextChanged(object sender, EventArgs e)
+        public void ShowError(string errorMessage)
         {
-
+            lblError.Text = errorMessage;
+            panelError.Visible = true;
         }
     }
 }

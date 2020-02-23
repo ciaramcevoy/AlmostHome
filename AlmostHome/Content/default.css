@@ -554,3 +554,18 @@
 .carousel-item img {
     height: 300px !important;
 }
+
+
+.error-msg, .success-msg {
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+    margin-left: 20px;
+}
+    .error-msg {   
+        color: #D8000C;
+        background-color: #FFBABA;        
+    }
+    .success-msg {
+        color: #270;
+        background-color: #DFF2BF;
+    }
