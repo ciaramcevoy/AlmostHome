@@ -158,6 +158,7 @@
     <Content Include="images\dog1.jpg" />
     <Content Include="images\dog2.jpg" />
     <Content Include="images\dog3.jpg" />
+    <Content Include="Pages\AdoptForm.aspx" />
     <Content Include="Pages\AnimalDatabase.aspx" />
     <Content Include="Pages\Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -394,6 +395,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Pages\AdoptForm.aspx.cs">
+      <DependentUpon>AdoptForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdoptForm.aspx.designer.cs">
+      <DependentUpon>AdoptForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AnimalDatabase.aspx.cs">
       <DependentUpon>AnimalDatabase.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -481,6 +489,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\ImageAnimals\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

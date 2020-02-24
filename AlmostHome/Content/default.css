@@ -556,7 +556,7 @@
 }
 
 
-.error-msg, .success-msg {
+.error-msg, .success-msg, .warning-msg {
     padding: 10px;
     border-radius: 3px 3px 3px 3px;
     margin-left: 20px;
@@ -568,6 +568,10 @@
     .success-msg {
         color: #270;
         background-color: #DFF2BF;
+    }
+    .warning-msg {
+        color: #9F6000;
+        background-color: #FEEFB3;
     }
 
 .container .panel-center {
@@ -604,3 +608,7 @@
         margin-right: 10px;
         text-align: center;
     }
+
+.card .card-header-animal {
+    background: linear-gradient(60deg, #767d7d, #516163);
+}

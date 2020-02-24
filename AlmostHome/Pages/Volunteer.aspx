@@ -269,7 +269,7 @@
             </div>
         </asp:Panel>
     </div>
-<script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/wizard/jquery.backstretch.js"></script>
     <script src="../Scripts/wizard/scripts.js"></script>
     <script type="text/javascript">
