@@ -1,5 +1,4 @@
-﻿using AlmostHome.Functions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,7 +16,7 @@ namespace AlmostHome.Pages.Admin
             // check if admin is logged in. if not redeirect to Admin Login page
             if (Session["Admin"] == null)
             {
-                Response.Redirect("Login");
+                Response.Redirect("/Pages/Login");
             }
 
             if (!IsPostBack)
@@ -28,7 +27,7 @@ namespace AlmostHome.Pages.Admin
 
         public void BindVolunteerApplicationData()
         {
-            gvVolunteerApplication.DataSource = FuncAdmin.GetVolunteerApplication();
+            gvVolunteerApplication.DataSource = VolunteerApplication.GetVolunteerApplication();
             gvVolunteerApplication.DataBind();
         }
 
@@ -63,17 +62,13 @@ namespace AlmostHome.Pages.Admin
                 int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
                 int rowIndex = row.RowIndex;
                 int volunteerApplicationID = Convert.ToInt32(gvVolunteerApplication.DataKeys[rowIndex].Values[0]);
-                FuncAdmin.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue);
-                FuncAdmin.SendEmailToApplicant(volunteerApplicationID, selectedValue);
+                VolunteerApplication.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue);
+                VolunteerApplication.SendEmailToApplicant(volunteerApplicationID, selectedValue);
             }
             catch (Exception ex)
             {
 
             }
-            
         }
-        
-       
-
     }
 }

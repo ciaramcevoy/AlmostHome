@@ -1,5 +1,4 @@
 ﻿using AlmostHome.Common;
-using AlmostHome.Functions;
 using AlmostHome.Models;
 using System;
 using System.Collections.Generic;
@@ -22,9 +21,6 @@ namespace AlmostHome
             {
                 
             }
-            //panelPopup.Visible = false;
-            //panelMsgPopup.Visible = false;
-
         }
 
         protected void btnSubmitQuiz_Click(object sender, EventArgs e)
@@ -33,7 +29,7 @@ namespace AlmostHome
             try
             {
                 //validate application by email address
-                bool valid = FuncVolunteerApplication.Validate(txtEmail.Text);
+                bool valid = VolunteerApplication.Validate(txtEmail.Text);
                 if (!valid)
                 {
                     QuizFailed();
@@ -145,7 +141,7 @@ namespace AlmostHome
                 volunteerApplication.Status = 0;
                 volunteerApplication.ContactNumber = Convert.ToInt32(txtContactNumber.Text);
                 volunteerApplication.EmailAddress = txtEmail.Text;
-                FuncVolunteerApplication.SaveVolunteerApplication(volunteerApplication);
+                VolunteerApplication.SaveVolunteerApplication(volunteerApplication);
                
                 //send email
                 string message = "Thank you for applying. We will be in touch with you shortly.";
