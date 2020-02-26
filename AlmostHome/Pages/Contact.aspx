@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
-        <div class="section text-center">
+        <div class="section text-center" style="padding: 0 0;">
             <div class="row">
                 <div class="card-body">
                     <h3 class="title">Contact Almost Home NI</h3>

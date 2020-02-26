@@ -14,7 +14,7 @@ namespace AlmostHome.Pages.Admin
             // check if admin is logged in. if not redeirect to Admin Login page
             if (Session["Admin"] == null)
             {
-                Response.Redirect("Login");
+                Response.Redirect("/Pages/Login");
             }
         }
     }

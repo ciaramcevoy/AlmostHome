@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="AdminRegister.aspx.cs" Inherits="AlmostHome.Pages.Admin.AdminRegister" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
-        <div class="section text-center">
+        <div class="section text-center" style="padding: 0 0;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
