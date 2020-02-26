@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="SuccessStories.aspx.cs" Inherits="AlmostHome.Pages.SuccessStories1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="SuccessStories.aspx.cs" Inherits="AlmostHome.Pages.SuccessStories" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
