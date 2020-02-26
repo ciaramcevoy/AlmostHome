@@ -127,7 +127,17 @@
     <Content Include="images\icons\paw.svg" />
     <Content Include="images\icons\three.svg" />
     <Content Include="images\icons\two.svg" />
+    <Content Include="images\img\aboutus1.jpg" />
+    <Content Include="images\img\aboutus2.jpg" />
+    <Content Include="images\img\aboutus3.jpg" />
     <Content Include="images\img\main-banner.jpg" />
+    <Content Include="images\img\story1.jpeg" />
+    <Content Include="images\img\story2.jpeg" />
+    <Content Include="images\img\story3.jpeg" />
+    <Content Include="images\img\story4.jpeg" />
+    <Content Include="images\img\story5.jpeg" />
+    <Content Include="images\img\story6.jpeg" />
+    <Content Include="images\img\story7.jpeg" />
     <Content Include="images\img\vol1.jpg" />
     <Content Include="images\img\vol2.jpg" />
     <Content Include="images\img\vol3.jpg" />
@@ -139,10 +149,11 @@
     <Content Include="images\Success.jpg" />
     <Content Include="images\Volunteer.png" />
     <Content Include="Pages\About.aspx" />
-    <Content Include="Pages\AdminPage.aspx" />
     <Content Include="Pages\Admin\AdminRegister.aspx" />
+    <Content Include="Pages\Admin\AnimalForm.aspx" />
     <Content Include="Pages\Admin\AnimalSetup.aspx" />
     <Content Include="Pages\Admin\AnimalTypeSetup.aspx" />
+    <Content Include="Pages\Admin\Applicants.aspx" />
     <Content Include="Pages\Admin\Index.aspx" />
     <Content Include="Pages\Admin\Logout.aspx" />
     <Content Include="Pages\Admin\Volunteers.aspx" />
@@ -159,7 +170,6 @@
     <Content Include="images\dog2.jpg" />
     <Content Include="images\dog3.jpg" />
     <Content Include="Pages\AdoptForm.aspx" />
-    <Content Include="Pages\AnimalDatabase.aspx" />
     <Content Include="Pages\Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\Site.css" />
@@ -176,6 +186,7 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Pages\Email\ContactUsTemplate.html" />
     <Content Include="Pages\Email\EmailTemplate.html" />
+    <Content Include="Pages\SuccessStories.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -201,7 +212,6 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Pages\Login.aspx" />
-    <Content Include="Pages\SearchResults.aspx" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -301,7 +311,6 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="Pages\SuccessStories.aspx" />
     <Content Include="Pages\ViewSwitcher.ascx" />
     <Content Include="Pages\Volunteer.aspx" />
     <Content Include="Scripts\wizard\jquery.backstretch.js" />
@@ -315,27 +324,27 @@
     <Compile Include="Common\DBCon.cs" />
     <Compile Include="Common\Email.cs" />
     <Compile Include="Common\Encryption.cs" />
-    <Compile Include="Functions\FuncAdmin.cs" />
-    <Compile Include="Functions\FuncVolunteerApplication.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\Animal.cs" />
+    <Compile Include="Models\AnimalApplication.cs" />
     <Compile Include="Models\AnimalType.cs" />
+    <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Models\VolunteerApplication.cs" />
-    <Compile Include="Pages\AdminPage.aspx.cs">
-      <DependentUpon>AdminPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\AdminPage.aspx.designer.cs">
-      <DependentUpon>AdminPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Admin\AdminRegister.aspx.cs">
       <DependentUpon>AdminRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Admin\AdminRegister.aspx.designer.cs">
       <DependentUpon>AdminRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\AnimalForm.aspx.cs">
+      <DependentUpon>AnimalForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\AnimalForm.aspx.designer.cs">
+      <DependentUpon>AnimalForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\AnimalSetup.aspx.cs">
       <DependentUpon>AnimalSetup.aspx</DependentUpon>
@@ -350,6 +359,13 @@
     </Compile>
     <Compile Include="Pages\Admin\AnimalTypeSetup.aspx.designer.cs">
       <DependentUpon>AnimalTypeSetup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Applicants.aspx.cs">
+      <DependentUpon>Applicants.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Applicants.aspx.designer.cs">
+      <DependentUpon>Applicants.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -402,13 +418,6 @@
     <Compile Include="Pages\AdoptForm.aspx.designer.cs">
       <DependentUpon>AdoptForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AnimalDatabase.aspx.cs">
-      <DependentUpon>AnimalDatabase.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\AnimalDatabase.aspx.designer.cs">
-      <DependentUpon>AnimalDatabase.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,14 +442,6 @@
     <Compile Include="Pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SearchResults.aspx.cs">
-      <DependentUpon>SearchResults.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\SearchResults.aspx.designer.cs">
-      <DependentUpon>SearchResults.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\SuccessStories.aspx.cs">
       <DependentUpon>SuccessStories.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -448,6 +449,7 @@
     <Compile Include="Pages\SuccessStories.aspx.designer.cs">
       <DependentUpon>SuccessStories.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pages\ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
