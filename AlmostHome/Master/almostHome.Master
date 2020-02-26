@@ -55,6 +55,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="/Pages/SuccessStories.aspx">
+                                <i class="material-icons">thumb_up</i> Success Stories
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/Pages/Adopt.aspx">
                                 <i class="material-icons">pets</i> Adopt
                             </a>
@@ -69,6 +74,9 @@
                                 <i class="material-icons">phone</i> Contact Us
                             </a>
                         </li>
+                       
+                    </ul>
+                    <ul id="navLogin" runat="server" class="navbar-nav navbar-right">
                         <li class="nav-item">
                             <a class="nav-link" href="/Pages/Login.aspx">
                                 <i class="material-icons">person</i> Login

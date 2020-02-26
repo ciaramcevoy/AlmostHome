@@ -5,12 +5,7 @@
         <div class="row card-body">
             <ul class="nav nav-pills nav-pills-icons">
                 <li class="nav-item">
-                    <a class="nav-link" href="#dashboard-1" aria-selected="false">
-                        <i class="material-icons">pets</i> Animals
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#schedule-1" aria-selected="false">
+                    <a class="nav-link" href="/Pages/Admin/Applicants.aspx" aria-selected="false">
                         <i class="material-icons">library_books</i> Applicants
                     </a>
                 </li>
@@ -19,13 +14,9 @@
                         <i class="material-icons">accessibility_new</i> Volunteers
                     </a>
                 </li>
-            </ul>
-        </div>
-        <div class="row card-body">
-            <ul class="nav nav-pills nav-pills-icons">
                 <li class="nav-item">
                     <a class="nav-link" href="/Pages/Admin/AnimalSetup.aspx" aria-selected="false">
-                        <i class="material-icons">pets</i> Animal Setup
+                        <i class="material-icons">pets</i> Animals
                     </a>
                 </li>
                 <li class="nav-item">

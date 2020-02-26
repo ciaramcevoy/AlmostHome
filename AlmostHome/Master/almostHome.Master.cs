@@ -21,10 +21,12 @@ namespace AlmostHome
             if (Session["Admin"] == null)
             {
                 navAdmin.Visible = false;
+                navLogin.Visible = true;
             }
             else
             {
                 navAdmin.Visible = true;
+                navLogin.Visible = false;
                 AdminModel admin = (AdminModel)Session["Admin"];
                 lblUsername.Text = admin.Username;
             }
