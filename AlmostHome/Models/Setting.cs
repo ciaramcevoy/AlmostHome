@@ -39,6 +39,16 @@ namespace AlmostHome.Models
             return settings;
         }
 
+        public static List<Setting> AnimalApplicationStatusList()
+        {
+            List<Setting> settings = new List<Setting>();
+            settings.Add(new Setting { ID = 1, Value = "Submitted" });
+            settings.Add(new Setting { ID = 2, Value = "Successful" });
+            settings.Add(new Setting { ID = 3, Value = "In Progress" });
+            settings.Add(new Setting { ID = 4, Value = "Unsuccessful" });
+            return settings;
+        }
+
     }
 
    

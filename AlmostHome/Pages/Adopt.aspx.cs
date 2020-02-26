@@ -35,7 +35,7 @@ namespace AlmostHome
                 bool children = Convert.ToBoolean(ddlChildren.SelectedValue);
                 bool secureGarden= Convert.ToBoolean(ddlSecureGarden.SelectedValue);
                 bool otherPets = Convert.ToBoolean(ddlOtherPets.SelectedValue);
-
+                
                 DataTable dt = Animal.GetSearchResult(animalType, animalAge, children, secureGarden, otherPets);
 
                 if (dt.Rows.Count > 0)

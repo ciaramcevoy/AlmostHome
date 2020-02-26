@@ -18,6 +18,8 @@ namespace AlmostHome.Models
         public bool SecureGarden { get; set; }
         public bool OtherPets { get; set; }
         public string ImageUrl { get; set; }
+        public bool Rehomed { get; set; }
+        public DateTime RehomedDate { get; set; }
 
         public static void SaveAnimal(Animal animal)
         {
@@ -31,6 +33,7 @@ namespace AlmostHome.Models
             cmd.Parameters.AddWithValue("OtherPets", animal.OtherPets);
             cmd.Parameters.AddWithValue("SecureGarden", animal.SecureGarden);
             cmd.Parameters.AddWithValue("ImageUrl", animal.ImageUrl);
+            cmd.Parameters.AddWithValue("AnimalID", animal.AnimalID);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
@@ -52,6 +55,17 @@ namespace AlmostHome.Models
 
         }
 
+        public static void DeleteAnimal(int animalID)
+        {
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            SqlCommand cmd = new SqlCommand("sp_delete_Animal", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("AnimalID", animalID);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
         public static DataTable GetSearchResult(int animalType,int animalAge, bool children, bool secureGarden, bool otherPets)
         {
             DataTable dt = new DataTable("dt");
@@ -71,6 +85,44 @@ namespace AlmostHome.Models
 
             return dt;
 
+        }
+
+        public static Animal GetAnimalByAnimalID(string animalId)
+        {
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            SqlDataReader rd;
+
+            Animal animal = null;
+
+            using (con)
+            {
+                // Getting the database connectivity using stored procedure
+                SqlCommand cmd = new SqlCommand("sp_get_AnimalByAnimalID", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Passing parameters
+                cmd.Parameters.AddWithValue("AnimalID", Convert.ToInt32(animalId));
+
+                con.Open();
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    animal = new Animal();
+                    animal.AnimalID = Convert.ToInt32(rd["AnimalID"]);
+                    animal.AnimalName = rd["AnimalName"].ToString();
+                    animal.AnimalAge = Convert.ToInt32(rd["AnimalAge"].ToString());
+                    animal.AnimalType = Convert.ToInt32(rd["AnimalType"].ToString());
+                    animal.Children = Convert.ToBoolean(rd["Children"].ToString());
+                    animal.SecureGarden = Convert.ToBoolean(rd["SecureGarden"].ToString());
+                    animal.OtherPets = Convert.ToBoolean(rd["OtherPets"].ToString());
+                    animal.ImageUrl = rd["ImageUrl"].ToString();
+                }
+                rd.Close();
+            }
+            con.Close();
+
+            return animal;
+            
         }
     }
 

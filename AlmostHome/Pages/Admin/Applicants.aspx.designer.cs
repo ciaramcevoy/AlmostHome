@@ -10,15 +10,15 @@
 namespace AlmostHome.Pages.Admin {
     
     
-    public partial class AnimalSetup {
+    public partial class Applicants {
         
         /// <summary>
-        /// lstAnimal control.
+        /// gvAdoptApplication control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lstAnimal;
+        protected global::System.Web.UI.WebControls.GridView gvAdoptApplication;
     }
 }

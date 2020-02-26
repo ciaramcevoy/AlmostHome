@@ -57,5 +57,6 @@ namespace AlmostHome.Models
             cmd.ExecuteNonQuery();
             con.Close();
         }
+       
     }
 }

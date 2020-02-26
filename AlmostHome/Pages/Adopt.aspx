@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
-        <div class="section text-center row">
+        <div class="section text-center row" style="padding: 0 0;">
             <div class="col-md-12 card">
                 <div class="card-header">
                     <h4 class="card-title">Adopt your perfect pet</h4>
@@ -84,8 +84,7 @@
                                             </div>
                                         </div>
                                         <div class="card-body">
-
-                                            <img alt="" src="/images/ImageAnimals/<%#Eval("ImageUrl")%>" height="75" width="75" />
+                                            <img alt="" src="/images/ImageAnimals/<%# Eval("ImageUrl").ToString()==""? "default.png" : Eval("ImageUrl") %>" height="75" width="75" />
                                             <div class="mt-1">
                                                 <p>Age: <%#Eval("AnimalAge")%></p>
                                                 <p>Children: <%#Eval("Children").ToString() == "True" ? "Yes" : "No" %></p>

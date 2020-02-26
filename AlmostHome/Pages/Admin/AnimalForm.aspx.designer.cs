@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmostHome.Pages {
+namespace AlmostHome.Pages.Admin {
     
     
-    public partial class AdoptForm {
+    public partial class AnimalForm {
         
         /// <summary>
         /// panelError control.
@@ -31,67 +31,76 @@ namespace AlmostHome.Pages {
         protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
-        /// txtApplicantName control.
+        /// ddlAnimalType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApplicantName;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAnimalType;
         
         /// <summary>
-        /// RequiredFieldValidatorApplicantName control.
+        /// txtAnimalName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorApplicantName;
+        protected global::System.Web.UI.WebControls.TextBox txtAnimalName;
         
         /// <summary>
-        /// txtContactNumber control.
+        /// RequiredFieldValidatorAnimalName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAnimalName;
         
         /// <summary>
-        /// RequiredFieldValidatorContactNumber control.
+        /// txtAnimalAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorContactNumber;
+        protected global::System.Web.UI.WebControls.TextBox txtAnimalAge;
         
         /// <summary>
-        /// txtEmailAddress control.
+        /// RequiredFieldValidatorAge control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmailAddress;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorAge;
         
         /// <summary>
-        /// RequiredFieldValidatorEmailAddress control.
+        /// ddlChildren control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmailAddress;
+        protected global::System.Web.UI.WebControls.DropDownList ddlChildren;
         
         /// <summary>
-        /// hdnAnimalID control.
+        /// ddlSecureGarden control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnAnimalID;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSecureGarden;
+        
+        /// <summary>
+        /// ddlOtherPets control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlOtherPets;
         
         /// <summary>
         /// animalImage control.
@@ -103,57 +112,48 @@ namespace AlmostHome.Pages {
         protected global::System.Web.UI.WebControls.Image animalImage;
         
         /// <summary>
-        /// lblAnimalName control.
+        /// imageUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnimalName;
+        protected global::System.Web.UI.WebControls.FileUpload imageUpload;
         
         /// <summary>
-        /// lblAnimalAge control.
+        /// regexValidator control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnimalAge;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator regexValidator;
         
         /// <summary>
-        /// lblChildren control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblChildren;
+        protected global::System.Web.UI.WebControls.Button btnSave;
         
         /// <summary>
-        /// lblSecureGarden control.
+        /// btnDelete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecureGarden;
+        protected global::System.Web.UI.WebControls.Button btnDelete;
         
         /// <summary>
-        /// lblOtherPets control.
+        /// hdnAnimalID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOtherPets;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.HiddenField hdnAnimalID;
     }
 }
