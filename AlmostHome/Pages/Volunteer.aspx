@@ -226,9 +226,9 @@
                                     <div class="form-group">
                                         <div class="small">Availability</div>
                                         <asp:DropDownList ID="ddlAvailability" class="form-control" runat="server" Visible="False">
-                                            <asp:ListItem Text="Submitted" Value="0"></asp:ListItem>
-                                            <asp:ListItem Text="Successful" Value="1"></asp:ListItem>
-                                            <asp:ListItem Text="Waiting list" Value="2"></asp:ListItem>
+                                            <asp:ListItem Text="Mornings" Value="1"></asp:ListItem>
+                                            <asp:ListItem Text="Afternoons" Value="2"></asp:ListItem>
+                                            <asp:ListItem Text="Evenings" Value="3"></asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                 </div>

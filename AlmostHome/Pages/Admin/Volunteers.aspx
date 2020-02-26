@@ -29,9 +29,9 @@
                         <ItemTemplate>
                             <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status") %>' Visible="False" />
                             <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged">
-                                <asp:ListItem Text="Submitted" Value="0"></asp:ListItem>
-                                <asp:ListItem Text="Successful" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="Waiting list" Value="2"></asp:ListItem>
+                                <asp:ListItem Text="Submitted" Value="1"></asp:ListItem>
+                                <asp:ListItem Text="Successful" Value="2"></asp:ListItem>
+                                <asp:ListItem Text="Waiting list" Value="3"></asp:ListItem>
                             </asp:DropDownList>
                         </ItemTemplate>
                     </asp:TemplateField>
