@@ -29,18 +29,28 @@ namespace AlmostHome
                 AdminModel adminModel = null;
 
                 // filling admin object
-                adminModel = AdminModel.Login(txtUsername.Text, txtPassword.Text);
+                adminModel = AdminModel.Login(txtUsername.Text);
 
                 if (adminModel == null)
                 {
                     // if admin object is not filled, displaying invalid login details message
-                    ShowError("Invalid Username or Password.");
+                    ShowError("Invalid Username.");
                 }
                 else
                 {
-                    // if login success, stores admin object into a session and redirects to Admin page
-                    Session["Admin"] = adminModel;
-                    Response.Redirect("/Pages/Admin/Index");
+                    //comapre password
+                    if (txtPassword.Text == Encryption.Decrypt(adminModel.Password))
+                    {
+                        // if login success, stores admin object into a session and redirects to Admin page
+                        Session["Admin"] = adminModel;
+                        Response.Redirect("/Pages/Admin/Index");
+                    }
+                    else
+                    {
+                        ShowError("Invalid Password.");
+                    }
+                    
+                    
                 }
             }
             catch (Exception ex)
