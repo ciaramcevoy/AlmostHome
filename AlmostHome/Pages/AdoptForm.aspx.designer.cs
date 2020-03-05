@@ -121,33 +121,6 @@ namespace AlmostHome.Pages {
         protected global::System.Web.UI.WebControls.Label lblAnimalAge;
         
         /// <summary>
-        /// lblChildren control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblChildren;
-        
-        /// <summary>
-        /// lblSecureGarden control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSecureGarden;
-        
-        /// <summary>
-        /// lblOtherPets control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOtherPets;
-        
-        /// <summary>
         /// btnSubmit control.
         /// </summary>
         /// <remarks>

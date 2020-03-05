@@ -17,9 +17,6 @@ namespace AlmostHome.Pages
             Animal animal = Animal.GetAnimalByAnimalID(animalId);
             lblAnimalName.Text = animal.AnimalName;
             lblAnimalAge.Text = animal.AnimalAge.ToString();
-            lblChildren.Text = animal.Children == true ? "Yes" : "No";
-            lblOtherPets.Text = animal.OtherPets == true ? "Yes" : "No";
-            lblSecureGarden.Text = animal.SecureGarden == true ? "Yes" : "No";
             hdnAnimalID.Value = animal.AnimalID.ToString();
             if (animal.ImageUrl != "")
             {
@@ -38,7 +35,7 @@ namespace AlmostHome.Pages
                 //create applicant obejct
                 Applicant applicant = new Applicant();
                 applicant.ApplicantName = txtApplicantName.Text;
-                applicant.ContactNumber = Convert.ToInt32(txtContactNumber.Text);
+                applicant.ContactNumber = txtContactNumber.Text;
                 applicant.EmailAddress = txtEmailAddress.Text;
 
                 //save applicant

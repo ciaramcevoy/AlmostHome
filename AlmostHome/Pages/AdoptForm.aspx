@@ -53,12 +53,6 @@
                             <asp:Label ID="lblAnimalName" runat="server"></asp:Label></p>
                         <p>Age:
                             <asp:Label ID="lblAnimalAge" runat="server"></asp:Label></p>
-                        <p>Children:
-                            <asp:Label ID="lblChildren" runat="server"></asp:Label></p>
-                        <p>Secure Garden:
-                            <asp:Label ID="lblSecureGarden" runat="server"></asp:Label></p>
-                        <p>Other Pets:
-                            <asp:Label ID="lblOtherPets" runat="server"></asp:Label></p>
                     </div>
                 </div>
             </div>
