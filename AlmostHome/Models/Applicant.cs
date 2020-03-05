@@ -12,7 +12,7 @@ namespace AlmostHome.Models
     {
         public int ApplicantID { get; set; }
         public string ApplicantName { get; set; }
-        public int ContactNumber { get; set; }
+        public string ContactNumber { get; set; }
         public string EmailAddress { get; set; }
 
 
@@ -56,7 +56,7 @@ namespace AlmostHome.Models
                     applicant = new Applicant();
                     applicant.ApplicantID = Convert.ToInt32(rd["ApplicantID"]);
                     applicant.ApplicantName= rd["ApplicantName"].ToString();
-                    applicant.ContactNumber = Convert.ToInt32(rd["ContactNumber"].ToString());
+                    applicant.ContactNumber = rd["ContactNumber"].ToString();
                     applicant.EmailAddress = rd["EmailAddress"].ToString();
                 }
                 rd.Close();

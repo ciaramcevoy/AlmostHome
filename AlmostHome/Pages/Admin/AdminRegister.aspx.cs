@@ -24,11 +24,11 @@ namespace AlmostHome.Pages.Admin
             try
             {
                 //validate
-                bool valid = AdminModel.ValidateUsername(txtUsername.Text);
+                bool valid = Models.Admin.ValidateUsername(txtUsername.Text);
                 if (valid)
                 {
 
-                    AdminModel.SaveAdmin(txtUsername.Text, txtPassword.Text);
+                    Models.Admin.SaveAdmin(txtUsername.Text, txtPassword.Text);
                     ShowSuccessMessage("The Admin registered successfully.");
                 }
                 else

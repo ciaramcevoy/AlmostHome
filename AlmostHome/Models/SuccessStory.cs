@@ -27,7 +27,7 @@ namespace AlmostHome.Models
             {
                 SqlCommand cmd = new SqlCommand("sp_getAll_SuccessStory", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
+                cmd.Parameters.AddWithValue("Active", true);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
 

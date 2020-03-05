@@ -27,7 +27,7 @@ namespace AlmostHome
             {
                 navAdmin.Visible = true;
                 navLogin.Visible = false;
-                AdminModel admin = (AdminModel)Session["Admin"];
+                Admin admin = (Admin)Session["Admin"];
                 lblUsername.Text = admin.Username;
             }
         }

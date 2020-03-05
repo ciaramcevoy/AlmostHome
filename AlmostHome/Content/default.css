@@ -612,3 +612,97 @@
 .card .card-header-animal {
     background: linear-gradient(60deg, #767d7d, #516163);
 }
+
+.img-raised {
+    width: 200px !important;
+    height: 200px !important;
+}
+
+.success-section .story {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    padding: 10px 0 10px;
+}
+
+.success-section .blockquote {
+    height: 100%;    
+}
+
+
+.live {
+    overflow: hidden;
+}
+
+    .live > li {
+        list-style: none;
+        position: relative;
+        padding: 0 0 0 3.5em;
+        margin: 0 0 .5em 10px;
+        -webkit-transition: .12s;
+        transition: .12s;
+    }
+
+        .live > li::before {
+            position: absolute;
+            content: '\2022';    
+            top: 0;
+            left: 0;
+            text-align: center;
+            font-size: 2em;
+            opacity: .5;
+            line-height: .75;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+
+        .live > li:hover {
+            color: #7a7a7a;
+        }
+
+            .live > li:hover::before {
+                -webkit-transform: scale(2);
+                transform: scale(2);
+                opacity: 1;
+                text-shadow: 0 0 4px;
+                -webkit-transition: .1s;
+                transition: .1s;
+            }
+    
+
+    .live.numbers {
+        counter-reset: xxx 0;
+    }
+
+        .live.numbers > li::before {
+            content: "Step " counter(xxx,decimal) ". ";
+            counter-increment: xxx 1;
+            font-size: 1em;
+            opacity: .5;
+            line-height: 1.4;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+
+        .live.numbers > li:hover:before {
+            opacity: 1;
+            left: -10px;
+            -webkit-transform: none;
+            transform: none;
+            text-shadow: none;
+            -webkit-transition: .12s;
+            transition: .12s;
+        }
+
+
+.adopt-content ol, .adopt-content ul {
+    text-align: left;
+    padding: 1.5em;
+}
+
+.adopt-content h5 {
+    font-weight: 500;
+}
+
+.shadow {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

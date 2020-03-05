@@ -119,7 +119,10 @@
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\font-css.css" />
     <Content Include="fonts\material-font.css" />
+    <Content Include="images\adopt-img.jpg" />
+    <Content Include="images\adoptme-banner2.jpg" />
     <Content Include="images\Cat1.jpg" />
+    <Content Include="images\contact-banner.gif" />
     <Content Include="images\Hamster.jpg" />
     <Content Include="images\icons\five.svg" />
     <Content Include="images\icons\four.svg" />
@@ -149,6 +152,7 @@
     <Content Include="images\Success.jpg" />
     <Content Include="images\Volunteer.png" />
     <Content Include="Pages\About.aspx" />
+    <Content Include="Pages\AddSuccessStory.aspx" />
     <Content Include="Pages\Admin\AdminRegister.aspx" />
     <Content Include="Pages\Admin\AnimalForm.aspx" />
     <Content Include="Pages\Admin\AnimalSetup.aspx" />
@@ -324,14 +328,22 @@
     <Compile Include="Common\DBCon.cs" />
     <Compile Include="Common\Email.cs" />
     <Compile Include="Common\Encryption.cs" />
-    <Compile Include="Models\AdminModel.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\AnimalApplication.cs" />
     <Compile Include="Models\AnimalType.cs" />
     <Compile Include="Models\Applicant.cs" />
     <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\SuccessStory.cs" />
     <Compile Include="Models\Volunteer.cs" />
     <Compile Include="Models\VolunteerApplication.cs" />
+    <Compile Include="Pages\AddSuccessStory.aspx.cs">
+      <DependentUpon>AddSuccessStory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AddSuccessStory.aspx.designer.cs">
+      <DependentUpon>AddSuccessStory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Admin\AdminRegister.aspx.cs">
       <DependentUpon>AdminRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

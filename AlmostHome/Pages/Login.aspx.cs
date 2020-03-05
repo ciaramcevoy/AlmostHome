@@ -26,10 +26,10 @@ namespace AlmostHome
             try
             {
                 // creating blank object of Admin
-                AdminModel adminModel = null;
+                Admin adminModel = null;
 
                 // filling admin object
-                adminModel = AdminModel.Login(txtUsername.Text);
+                adminModel = Admin.Login(txtUsername.Text);
 
                 if (adminModel == null)
                 {
