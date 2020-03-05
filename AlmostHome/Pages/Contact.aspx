@@ -2,8 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
+        <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto"/>
         <div class="section text-center" style="padding: 0 0;">
-            <div class="row">
+            <div class="row shadow">
                 <div class="card-body">
                     <h3 class="title">Contact Almost Home NI</h3>
                     <div class="row pb-3">
@@ -96,7 +97,7 @@
             </div>
         </div>
         <div class="section text-center">
-            <div class="row">
+            <div class="row shadow">
                 <div class="col-md-9">
                     <iframe width="100%" height="400" frameborder="0" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJR7FVWEP9YEgREEK9WBg4z4M&key=AIzaSyAr923H27qKCWJFpQ-p4MOPqQaKKoSwvT0" allowfullscreen></iframe>
                 </div>
