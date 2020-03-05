@@ -216,7 +216,7 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <div class="small">Contact Number</div>
-                                        <asp:TextBox ID="txtContactNumber" runat="server" Visible="False" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="txtContactNumber" runat="server" Visible="False" class="form-control" TextMode="Number"></asp:TextBox>
                                     </div>
                                     <div class="form-group">
                                         <div class="small">Preferred Unit</div>

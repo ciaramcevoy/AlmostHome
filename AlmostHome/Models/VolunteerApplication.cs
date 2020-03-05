@@ -16,7 +16,7 @@ namespace AlmostHome.Models
         public int Availability { get; set; }
         public int PreferredUnit { get; set; }
         public int Status { get; set; }
-        public int ContactNumber { get; set; }
+        public string ContactNumber { get; set; }
         public string EmailAddress { get; set; }
 
         public static DataSet GetVolunteerApplication()
@@ -132,7 +132,7 @@ namespace AlmostHome.Models
                 volunteerApplication.VolunteerApplicationID = Convert.ToInt32(rd["VolunteerApplicationID"]);
                 volunteerApplication.ApplicationDate = Convert.ToDateTime(rd["ApplicationDate"].ToString());
                 volunteerApplication.VolunteerName = rd["VolunteerName"].ToString();
-                volunteerApplication.ContactNumber = Convert.ToInt32(rd["ContactNumber"].ToString());
+                volunteerApplication.ContactNumber = rd["ContactNumber"].ToString();
                 volunteerApplication.EmailAddress = rd["EmailAddress"].ToString();
                 volunteerApplication.Availability = Convert.ToInt32(rd["Availability"].ToString());
                 volunteerApplication.PreferredUnit = Convert.ToInt32(rd["PreferredUnit"].ToString());

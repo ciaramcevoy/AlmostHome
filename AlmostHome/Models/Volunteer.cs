@@ -11,7 +11,7 @@ namespace AlmostHome.Models
         public string VolunteerName { get; set; }
         public int Availability { get; set; }
         public int PreferredUnit { get; set; }
-        public int ContactNumber { get; set; }
+        public string ContactNumber { get; set; }
         public string EmailAddress { get; set; }
         public bool Active { get; set; }
     }

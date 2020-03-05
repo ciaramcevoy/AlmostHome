@@ -17,10 +17,7 @@ namespace AlmostHome
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                
-            }
+           
         }
 
         protected void btnSubmitQuiz_Click(object sender, EventArgs e)
@@ -32,7 +29,7 @@ namespace AlmostHome
                 bool valid = VolunteerApplication.Validate(txtEmail.Text);
                 if (!valid)
                 {
-                    QuizFailed();
+                    QuizFailed("You have been applied recently. Please try again in 6 months time form the previously applied date.");
                 }
                 else
                 {
@@ -44,23 +41,25 @@ namespace AlmostHome
                     }
                     else
                     {
-                        QuizFailed();
+                        QuizFailed("Sorry you do not meet our volunteering requirements. Please try again in 6 months time.");
                     }
                 }
             }
             catch (Exception ex)
             {
-
+                lblMsgBody.Text = "Unknown Error! Please try again later.";
+                panelMsgPopup.Visible = true;
             }
         }
 
-        public void QuizFailed()
+        public void QuizFailed(string message)
         {
             txtContactNumber.Visible = false;
             ddlPreferredUnit.Visible = false;
             ddlAvailability.Visible = false;
             lblPopupHeader.Text = "Warning!";
-            lblPopupBody.Text = "Your are not eligible to apply.";
+            lblPopupBody.Text = message;
+
             lblPopupBody.Visible = true;
             btnSubmitApplication.Visible = false;
             panelPopup.Visible = true;
@@ -139,7 +138,7 @@ namespace AlmostHome
                 volunteerApplication.Availability = Convert.ToInt32(ddlAvailability.SelectedValue);
                 volunteerApplication.PreferredUnit = Convert.ToInt32(ddlPreferredUnit.SelectedValue);
                 volunteerApplication.Status = 0;
-                volunteerApplication.ContactNumber = Convert.ToInt32(txtContactNumber.Text);
+                volunteerApplication.ContactNumber = txtContactNumber.Text;
                 volunteerApplication.EmailAddress = txtEmail.Text;
                 VolunteerApplication.SaveVolunteerApplication(volunteerApplication);
                
@@ -155,7 +154,8 @@ namespace AlmostHome
             }
             catch (Exception ex)
             {
-
+                lblMsgBody.Text = "Application Submission Failed!";
+                panelMsgPopup.Visible = true;
             }
             finally
             {
