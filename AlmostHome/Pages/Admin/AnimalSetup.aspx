@@ -33,6 +33,9 @@
                     </asp:ListView>
                 </div>
             </div>
+            <button class="btn btn-default mr-auto ml-auto" onclick="location.href = '/Pages/Admin/AnimalForm';" type="button">
+                <i class="material-icons">library_add</i> Add Animal
+            </button>
         </div>
     </div>
 </asp:Content>

@@ -21,7 +21,7 @@ namespace AlmostHome.Pages
 
         public void BindSuccessStories()
         {
-            lstSuccessStories.DataSource = SuccessStory.GetSuccessStories();
+            lstSuccessStories.DataSource = SuccessStory.GetSuccessStories(true);
             lstSuccessStories.DataBind();
 
         }

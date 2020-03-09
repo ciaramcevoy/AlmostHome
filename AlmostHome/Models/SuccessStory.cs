@@ -18,7 +18,7 @@ namespace AlmostHome.Models
         public bool Active { get; set; }
 
 
-        public static DataSet GetSuccessStories()
+        public static DataSet GetSuccessStories(bool activeOnly)
         {
             DataSet dataSet = new DataSet("dt");
 
@@ -27,7 +27,8 @@ namespace AlmostHome.Models
             {
                 SqlCommand cmd = new SqlCommand("sp_getAll_SuccessStory", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("Active", true);
+                cmd.Parameters.AddWithValue("Active", activeOnly);
+
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
 
@@ -37,6 +38,34 @@ namespace AlmostHome.Models
 
             return dataSet;
 
+        }
+
+        public static void SaveSuccessStory(SuccessStory successStory)
+        {
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            SqlCommand cmd = new SqlCommand("sp_save_SuccessStory", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("Name", successStory.Name);
+            cmd.Parameters.AddWithValue("StroryDescription", successStory.StroryDescription);
+            cmd.Parameters.AddWithValue("Image", successStory.Image);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public static void UpdateSuccessStoryStatus(int storyID, bool active)
+        {
+            //getting the database connectivity
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            //set command type as stored procedure
+            SqlCommand cmd = new SqlCommand("sp_update_SuccessStoryStatus", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //setting parameters
+            cmd.Parameters.AddWithValue("StoryID", storyID);
+            cmd.Parameters.AddWithValue("Active", active);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

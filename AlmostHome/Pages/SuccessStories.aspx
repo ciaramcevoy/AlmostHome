@@ -12,7 +12,7 @@
                     <ItemTemplate>
                         <div class="row story">
                             <div class="col-md-4">
-                                <img src="/images/img/<%#Eval("Image")%>" alt="Raised Image" class="img-raised rounded img-fluid" />
+                                <img src="/images/SuccessStory/<%#Eval("Image")%>" alt="Raised Image" class="img-raised rounded img-fluid" />
                             </div>
                             <div class="col-md-8 text-left">
                                 <div class="blockquote ">
@@ -23,17 +23,11 @@
                         </div>
                     </ItemTemplate>
                 </asp:ListView>
-                <div class="row">
-                    <ul class="nav nav-pills nav-pills-icons float-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Pages/AddSuccessStory.aspx" aria-selected="false">
-                                <i class="material-icons">playlist_add</i> Add your success story
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+               
             </div>
-            
+            <button class="btn btn-default" onclick="location.href = '/Pages/AddSuccessStory';" type="button">
+                <i class="material-icons">playlist_add</i> Add your success story
+            </button>
         </div>
     </div>
 </asp:Content>

@@ -79,5 +79,11 @@ namespace AlmostHome
             lblWarn.Text = "No Records Found!";
             panelWarn.Visible = true;
         }
+
+        protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            (lstSearchResult.FindControl("DataPagerResult") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+            this.BindAnimalTypes();
+        }
     }
 }

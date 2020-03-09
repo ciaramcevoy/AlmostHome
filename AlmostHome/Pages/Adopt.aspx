@@ -97,6 +97,13 @@
                         <asp:ListView ID="lstSearchResult" runat="server">
                             <LayoutTemplate>
                                 <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+                                <asp:DataPager ID="DataPagerResult" runat="server" PagedControlID="lstSearchResult" PageSize="5">
+                                    <Fields>
+                                        <asp:NextPreviousPagerField ButtonType="Link" ShowFirstPageButton="false" ShowPreviousPageButton="true" ShowNextPageButton="false" ButtonCssClass="pagerButton"/>
+                                        <asp:NumericPagerField ButtonType="Link" NumericButtonCssClass="pagerButton" />
+                                        <asp:NextPreviousPagerField ButtonType="Link" ShowNextPageButton="true" ShowLastPageButton="false" ShowPreviousPageButton = "false"  ButtonCssClass="pagerButton"/>
+                                    </Fields>
+                                </asp:DataPager>                               
                             </LayoutTemplate>
                             <ItemTemplate>
                                 <div class="col-md-3 float-left">

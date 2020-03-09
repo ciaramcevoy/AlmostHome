@@ -134,13 +134,13 @@
     <Content Include="images\img\aboutus2.jpg" />
     <Content Include="images\img\aboutus3.jpg" />
     <Content Include="images\img\main-banner.jpg" />
-    <Content Include="images\img\story1.jpeg" />
-    <Content Include="images\img\story2.jpeg" />
-    <Content Include="images\img\story3.jpeg" />
-    <Content Include="images\img\story4.jpeg" />
-    <Content Include="images\img\story5.jpeg" />
-    <Content Include="images\img\story6.jpeg" />
-    <Content Include="images\img\story7.jpeg" />
+    <Content Include="images\SuccessStory\story1.jpeg" />
+    <Content Include="images\SuccessStory\story2.jpeg" />
+    <Content Include="images\SuccessStory\story3.jpeg" />
+    <Content Include="images\SuccessStory\story4.jpeg" />
+    <Content Include="images\SuccessStory\story5.jpeg" />
+    <Content Include="images\SuccessStory\story6.jpeg" />
+    <Content Include="images\SuccessStory\story7.jpeg" />
     <Content Include="images\img\vol1.jpg" />
     <Content Include="images\img\vol2.jpg" />
     <Content Include="images\img\vol3.jpg" />
@@ -149,6 +149,7 @@
     <Content Include="images\Logo.jpg" />
     <Content Include="images\Rabbit.jpeg" />
     <Content Include="images\Rabbit.jpg" />
+    <Content Include="images\success-story.jpg" />
     <Content Include="images\Success.jpg" />
     <Content Include="images\Volunteer.png" />
     <Content Include="Pages\About.aspx" />
@@ -160,6 +161,7 @@
     <Content Include="Pages\Admin\Applicants.aspx" />
     <Content Include="Pages\Admin\Index.aspx" />
     <Content Include="Pages\Admin\Logout.aspx" />
+    <Content Include="Pages\Admin\ReviewSuccessStories.aspx" />
     <Content Include="Pages\Admin\Volunteers.aspx" />
     <Content Include="Pages\Adopt.aspx" />
     <Content Include="App_Data\almostHomedb.mdf" />
@@ -392,6 +394,13 @@
     </Compile>
     <Compile Include="Pages\Admin\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\ReviewSuccessStories.aspx.cs">
+      <DependentUpon>ReviewSuccessStories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\ReviewSuccessStories.aspx.designer.cs">
+      <DependentUpon>ReviewSuccessStories.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\Volunteers.aspx.cs">
       <DependentUpon>Volunteers.aspx</DependentUpon>

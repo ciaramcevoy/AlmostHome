@@ -706,3 +706,67 @@
 .shadow {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
+
+.pagerButton{
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: 0;
+    line-height: 1.25;
+    color: #2196f3;
+    background-color: transparent;
+    border: 0 solid #dee2e6;
+}
+
+
+.button-panel .container {
+    position: relative;
+}
+        .button-panel .container .content {
+            max-height: 5.5em;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        .button-panel .container .label-container {
+            bottom: 1px;
+            position: absolute;
+            right: 0;
+        }
+            .button-panel .container .label-container #read-more-label1, .button-panel .container .label-container #read-more-label1, .button-panel .container .label-container #read-more-label2, .button-panel .container .label-container #read-more-label3, .button-panel .container .label-container #read-more-label4, .button-panel .container .label-container #read-more-label5 {
+                background-color: white;
+                color: #6e6ed0;
+                cursor: pointer;
+                float: right;
+            }
+                .button-panel .container .label-container #read-more-label1:before, .button-panel .container .label-container #read-more-label2:before, .button-panel .container .label-container #read-more-label3:before, .button-panel .container .label-container #read-more-label4:before, .button-panel .container .label-container #read-more-label5:before {
+                    content: '[Read More]';
+                }
+
+    .button-panel .container #read-more-trigger1,
+    .button-panel .container #read-more-trigger2,
+    .button-panel .container #read-more-trigger3,
+    .button-panel .container #read-more-trigger4,
+    .button-panel .container #read-more-trigger5 {
+        display: none;
+    }
+            .button-panel .container #read-more-trigger1:checked ~ .label-container #read-more-label1:before,
+            .button-panel .container #read-more-trigger2:checked ~ .label-container #read-more-label2:before,
+            .button-panel .container #read-more-trigger3:checked ~ .label-container #read-more-label3:before,
+            .button-panel .container #read-more-trigger4:checked ~ .label-container #read-more-label4:before,
+            .button-panel .container #read-more-trigger5:checked ~ .label-container #read-more-label5:before {
+                content: '[Read Less]';
+            }
+           
+            .button-panel .container #read-more-trigger1:checked ~ .content,
+            .button-panel .container #read-more-trigger2:checked ~ .content,
+            .button-panel .container #read-more-trigger3:checked ~ .content,
+            .button-panel .container #read-more-trigger4:checked ~ .content,
+            .button-panel .container #read-more-trigger5:checked ~ .content{
+                max-height: 100em;
+            }
+
+
+.button-panel .img-raised {
+    width: 150px !important;
+    height: 150px !important;
+}
