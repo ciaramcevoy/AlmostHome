@@ -26,36 +26,21 @@ namespace AlmostHome
 
         protected void SearchAnimals(object sender, EventArgs e)
         {
+            //create animal filter object
 
-            try
-            {
-                panelSearchResult.Visible = true;
-                int animalType = Convert.ToInt32(ddlAnimalType.SelectedValue); 
-                int animalAge = Convert.ToInt32(ddlAnimalAge.SelectedValue);
-                bool children = Convert.ToBoolean(ddlChildren.SelectedValue);
-                bool secureGarden= Convert.ToBoolean(ddlSecureGarden.SelectedValue);
-                bool otherPets = Convert.ToBoolean(ddlOtherPets.SelectedValue);
-                
-                DataTable dt = Animal.GetSearchResult(animalType, animalAge, children, secureGarden, otherPets);
+            Animal animalFilter = new Animal();
+            animalFilter.AnimalType = Convert.ToInt32(ddlAnimalType.SelectedValue);
+            animalFilter.AnimalAge = Convert.ToInt32(ddlAnimalAge.SelectedValue);
+            animalFilter.Children = Convert.ToBoolean(ddlChildren.SelectedValue);
+            animalFilter.SecureGarden = Convert.ToBoolean(ddlSecureGarden.SelectedValue);
+            animalFilter.OtherPets = Convert.ToBoolean(ddlOtherPets.SelectedValue);
 
-                if (dt.Rows.Count > 0)
-                {
-                    panelWarn.Visible = false;
-                    panelError.Visible = false;
-                    lstSearchResult.DataSource = dt;
-                    lstSearchResult.DataBind();
-                }
-                else
-                {
-                    lstSearchResult.DataSource = null;
-                    lstSearchResult.DataBind();
-                    ShowWarning();
-                }
-            }
-            catch(Exception ex)
-            {
-                ShowError(ex.Message);
-            }
+            //store the filter object in session
+            Session["AnimalFilter"] = animalFilter;
+            //redirect to search page
+            Response.Redirect("/Pages/Search");
+
+
         }
 
         public void BindAnimalTypes()
@@ -65,25 +50,6 @@ namespace AlmostHome
             ddlAnimalType.DataTextField = "Type";
             ddlAnimalType.DataBind();
         }
-
-        public void ShowError(string errorMessage)
-        {
-            panelWarn.Visible = false;
-            lblError.Text = errorMessage;
-            panelError.Visible = true;
-        }
-
-        public void ShowWarning()
-        {
-            panelError.Visible = false;
-            lblWarn.Text = "No Records Found!";
-            panelWarn.Visible = true;
-        }
-
-        protected void OnPagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
-        {
-            (lstSearchResult.FindControl("DataPagerResult") as DataPager).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-            this.BindAnimalTypes();
-        }
+       
     }
 }

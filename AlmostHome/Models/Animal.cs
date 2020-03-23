@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace AlmostHome.Models
 {
@@ -66,25 +67,32 @@ namespace AlmostHome.Models
             con.Close();
         }
 
-        public static DataTable GetSearchResult(int animalType,int animalAge, bool children, bool secureGarden, bool otherPets)
+        public static DataTable GetSearchResult(Animal animalFilter, int pageIndex, int pageSize, out int rowCount)
         {
             DataTable dt = new DataTable("dt");
             using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
             {
                 SqlCommand cmd = new SqlCommand("sp_get_AnimalSearch", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@AnimalType", animalType);
-                cmd.Parameters.AddWithValue("@AnimalAge", animalAge);
-                cmd.Parameters.AddWithValue("@Children", children);
-                cmd.Parameters.AddWithValue("@SecureGarden ", secureGarden);
-                cmd.Parameters.AddWithValue("@OtherPets", otherPets);
+                cmd.Parameters.AddWithValue("@AnimalType", animalFilter.AnimalType);
+                cmd.Parameters.AddWithValue("@AnimalAge", animalFilter.AnimalAge);
+                cmd.Parameters.AddWithValue("@Children", animalFilter.Children);
+                cmd.Parameters.AddWithValue("@SecureGarden ", animalFilter.SecureGarden);
+                cmd.Parameters.AddWithValue("@OtherPets", animalFilter.OtherPets);
+                cmd.Parameters.AddWithValue("@PageIndex", pageIndex);
+                cmd.Parameters.AddWithValue("@PageSize", pageSize);
+                cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
+                cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;
+                con.Open();
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
                 da.Fill(dt);
+                con.Close();
+                int recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
+                rowCount = recordCount;
             }
 
             return dt;
-
         }
 
         public static Animal GetAnimalByAnimalID(string animalId)

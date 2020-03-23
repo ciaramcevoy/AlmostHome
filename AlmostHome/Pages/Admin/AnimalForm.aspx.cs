@@ -21,12 +21,13 @@ namespace AlmostHome.Pages.Admin
             if (!Page.IsPostBack)
             {
                 BindAnimalTypes();
+                string animalId = Request.QueryString["id"];
+                if (animalId != null || animalId != "")
+                {
+                    SetValues(animalId);
+                }
             }
-            string animalId = Request.QueryString["id"];
-            if (animalId != null || animalId != "")
-            {
-                SetValues(animalId);
-            }
+            
         }
 
         public void BindAnimalTypes()

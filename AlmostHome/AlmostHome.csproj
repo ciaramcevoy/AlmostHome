@@ -321,6 +321,7 @@
     <Content Include="Pages\Volunteer.aspx" />
     <Content Include="Scripts\wizard\jquery.backstretch.js" />
     <Content Include="Scripts\wizard\scripts.js" />
+    <Content Include="Pages\Search.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -484,6 +485,13 @@
     </Compile>
     <Compile Include="Pages\Volunteer.aspx.designer.cs">
       <DependentUpon>Volunteer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
