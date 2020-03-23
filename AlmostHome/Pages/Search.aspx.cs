@@ -11,7 +11,7 @@ namespace AlmostHome
 {
     public partial class Search : System.Web.UI.Page
     {
-        private int PageSize = 4;
+        private int PageSize = 8;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -118,7 +118,7 @@ namespace AlmostHome
             List<ListItem> pages = new List<ListItem>();
 
             int startIndex, endIndex;
-            int pagerSpan = 4;
+            int pagerSpan = 8;
 
             //Calculate the Start and End Index of pages to be displayed.
             double dblPageCount = (double)((decimal)recordCount / Convert.ToDecimal(PageSize));
