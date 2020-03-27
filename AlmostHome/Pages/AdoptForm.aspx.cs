@@ -44,7 +44,7 @@ namespace AlmostHome.Pages
                 //create application object
                 AnimalApplication application = new AnimalApplication();
                 application.AnimalID = Convert.ToInt32(hdnAnimalID.Value);
-                application.Status = 0;
+                application.Status = 1;
                 application.ApplicantID = apllicantId;
 
                 //save application
@@ -60,11 +60,13 @@ namespace AlmostHome.Pages
                 string applicantEmailBody = Email.PopulateBody(applicant.ApplicantName.Split(' ')[0], applicantMessage);
                 Email.SendEmail(applicant.EmailAddress, "Adoption Application Submitted", applicantEmailBody);
 
-                Response.Redirect("/Pages/Adopt");
+                ShowSuccessMessage("Adoption application submitted successfully.");
+                //call javascript function - redirect function
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "myScript", "Redirect('/Pages/Adopt');", true);
             }
             catch (Exception ex)
             {
-                ShowError(ex.Message);
+                ShowError("Something went wrong. Please try again.");
             }
             
         }
@@ -73,8 +75,14 @@ namespace AlmostHome.Pages
         {
             lblError.Text = errorMessage;
             panelError.Visible = true;
+            panelSuccess.Visible = false;
         }
 
-
+        public void ShowSuccessMessage(string message)
+        {
+            panelError.Visible = false;
+            lblSuccess.Text = message;
+            panelSuccess.Visible = true;
+        }
     }
 }

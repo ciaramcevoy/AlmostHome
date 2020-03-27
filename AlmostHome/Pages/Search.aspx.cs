@@ -58,20 +58,6 @@ namespace AlmostHome
             ddlAnimalType.DataTextField = "Type";
             ddlAnimalType.DataBind();
         }
-
-        public void ShowError(string errorMessage)
-        {
-            panelWarn.Visible = false;
-            lblError.Text = errorMessage;
-            panelError.Visible = true;
-        }
-
-        public void ShowWarning()
-        {
-            panelError.Visible = false;
-            lblWarn.Text = "No Records Found!";
-            panelWarn.Visible = true;
-        }
       
         protected void Page_Changed(object sender, EventArgs e)
         {
@@ -109,7 +95,7 @@ namespace AlmostHome
             }
             catch (Exception ex)
             {
-                ShowError(ex.Message);
+                ShowError("Something went wrong. Please try again.");
             }
         }
 
@@ -183,6 +169,20 @@ namespace AlmostHome
             rptPager.DataSource = pages;
             rptPager.DataBind();
         }
-        
+
+        public void ShowError(string errorMessage)
+        {
+            panelWarn.Visible = false;
+            lblError.Text = errorMessage;
+            panelError.Visible = true;
+        }
+
+        public void ShowWarning()
+        {
+            panelError.Visible = false;
+            lblWarn.Text = "No Records Found!";
+            panelWarn.Visible = true;
+        }
+
     }
 }

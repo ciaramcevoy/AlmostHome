@@ -137,7 +137,7 @@ namespace AlmostHome
                 volunteerApplication.ApplicationDate = DateTime.Now;
                 volunteerApplication.Availability = Convert.ToInt32(ddlAvailability.SelectedValue);
                 volunteerApplication.PreferredUnit = Convert.ToInt32(ddlPreferredUnit.SelectedValue);
-                volunteerApplication.Status = 0;
+                volunteerApplication.Status = 1;
                 volunteerApplication.ContactNumber = txtContactNumber.Text;
                 volunteerApplication.EmailAddress = txtEmail.Text;
                 VolunteerApplication.SaveVolunteerApplication(volunteerApplication);

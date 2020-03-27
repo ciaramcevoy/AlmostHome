@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="Applicants.aspx.cs" Inherits="AlmostHome.Pages.Admin.Applicants" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
         <div class="card-body">
-
+            <a class="btn btn-default btn-round btn-sm float-right" href="/Pages/Admin/Index">
+                <i class="material-icons">keyboard_backspace</i> Return to Admin Home
+                <div class="ripple-container"></div>
+            </a>
             <asp:GridView ID="gvAdoptApplication" runat="server" AutoGenerateColumns="false" Width="100%"
                 AllowPaging="true" PageSize="10" OnPageIndexChanging="gvAdoptApplication_PageIndexChanging" OnRowDataBound="OnRowDataBound"
                 DataKeyNames="ApplicationID,AnimalID"

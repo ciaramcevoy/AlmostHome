@@ -42,6 +42,7 @@ namespace AlmostHome.Pages.Admin
         {
             try
             {
+                
                 string folderPath = Server.MapPath("/images/ImageAnimals/");
                 string fileName = Path.GetFileName(imageUpload.FileName);
 
@@ -55,6 +56,12 @@ namespace AlmostHome.Pages.Admin
                 animal.ImageUrl = fileName;
                 animal.AnimalID = Convert.ToInt32(hdnAnimalID.Value);
 
+                bool isUpdate = false;
+                if (animal.AnimalID > 0)
+                {
+                    isUpdate = true;
+                }
+
                 Animal.SaveAnimal(animal);
 
                 if (fileName != "")
@@ -62,19 +69,22 @@ namespace AlmostHome.Pages.Admin
                     //Save the File to the Directory (Folder).
                     imageUpload.SaveAs(folderPath + fileName);
                 }
-                Response.Redirect("/Pages/Admin/AnimalSetup");
+
+                string successMessage = "Animal data saved successfully.";
+                if (isUpdate)
+                {
+                    successMessage = "Animal data updated successfully.";
+                }
+
+                ShowSuccessMessage(successMessage);
+                //call javascript function - redirect function
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "myScript", "Redirect('/Pages/Admin/AnimalSetup');", true);
 
             }
             catch (Exception ex)
             {
-                ShowError(ex.Message);
+                ShowError("Something went wrong. Please try again.");
             }
-        }
-
-        public void ShowError(string errorMessage)
-        {
-            lblError.Text = errorMessage;
-            panelError.Visible = true;
         }
 
         public void SetValues(string animalId)
@@ -114,6 +124,20 @@ namespace AlmostHome.Pages.Admin
                 ShowError(ex.Message);
             }
 
+        }
+
+        public void ShowError(string errorMessage)
+        {
+            lblError.Text = errorMessage;
+            panelError.Visible = true;
+            panelSuccess.Visible = false;
+        }
+
+        public void ShowSuccessMessage(string message)
+        {
+            panelError.Visible = false;
+            lblSuccess.Text = message;
+            panelSuccess.Visible = true;
         }
     }
 }

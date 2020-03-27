@@ -2,6 +2,32 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
+        <asp:Panel ID="panelSuccess" runat="server" Visible="False">
+            <div class="alert alert-success">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">check</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblSuccess" runat="server" CssClass="lblSuccess"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="panelError" runat="server" Visible="False">
+            <div class="alert alert-danger">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">error_outline</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
         <div class="section text-center" style="padding: 0 0;">
             <div class="row">
                 <div class="col-md-4 card">
@@ -9,26 +35,11 @@
                         <h4 class="card-title">Add New Animal Type</h4>
                     </div>
                     <div class="card-body">
-                        <div class="col-md-12 mb-3">
-                            <asp:Panel ID="panelError" runat="server" Visible="False">
-                                <div class="error-msg">
-                                    <i class="fa fa-times-circle"></i>
-                                    <asp:Label ID="lblError" runat="server"></asp:Label>
-                                </div>
-                            </asp:Panel>
-                            <asp:Panel ID="panelSuccess" runat="server" Visible="False">
-                                <div class="success-msg">
-                                    <i class="fa fa-check"></i>
-                                    <asp:Label ID="lblSuccess" runat="server"></asp:Label>
-                                </div>
-                            </asp:Panel>
-                        </div>
-
                         <div class="col-md-12">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="material-icons">face</i>
+                                        <i class="material-icons">pets</i>
                                     </span>
                                 </div>
                                 <asp:TextBox ID="txtAnimalType" runat="server" CssClass="form-control" placeholder="Animal Type" />

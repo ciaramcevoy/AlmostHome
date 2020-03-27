@@ -3,7 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
         <div class="card-body">
-
+            <a class="btn btn-default btn-round btn-sm float-right" href="/Pages/Admin/Index">
+                <i class="material-icons">keyboard_backspace</i> Return to Admin Home
+                <div class="ripple-container"></div>
+            </a>
             <asp:GridView ID="gvVolunteerApplication" runat="server" AutoGenerateColumns="false" Width="100%"
                 AllowPaging="true" PageSize="10" OnPageIndexChanging="gvVolunteerApplication_PageIndexChanging" OnRowDataBound="OnRowDataBound"
                 DataKeyNames="VolunteerApplicationID"

@@ -22,12 +22,22 @@ namespace AlmostHome
                 //send email
                 string emailBody = Email.PopulateContactUsMailBody(txtContactName.Text, txtEmail.Text, txtContactNumber.Text, txtMessage.Text);
                 Email.SendEmail("almosthomestatusapplication@gmail.com", txtSubject.Text, emailBody);
-                ShowSuccessMessage("Your message has been successfully sent.");
+                ShowSuccessMessage("Your message has been sent successfully.");
+                //clear
+                txtContactName.Text = "";
+                txtEmail.Text = "";
+                txtContactNumber.Text = "";
+                txtMessage.Text = "";
+                txtSubject.Text = "";
+
+
+                //call javascript function - redirect function
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "myScript", "Redirect('/Pages/Default');", true);
 
             }
             catch (Exception ex)
             {
-                ShowError(ex.Message);
+                ShowError("Something went wrong. Please try again.");
             }
             
         }

@@ -3,24 +3,36 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container main-content">
+        <asp:Panel ID="panelSuccess" runat="server" Visible="False">
+            <div class="alert alert-success">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">check</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblSuccess" runat="server" CssClass="lblSuccess"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="panelError" runat="server" Visible="False">
+            <div class="alert alert-danger">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">error_outline</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
         <div class="section text-center" style="padding: 0 0;">
             <div class="row shadow">
                 <div class="card-body">
                     <h3 class="title">Add Your Success Story</h3>
-                    <div class="row pb-3">
-                        <asp:Panel ID="panelError" runat="server" Visible="False" CssClass="panel-center">
-                            <div class="error-msg">
-                                <i class="fa fa-times-circle"></i>
-                                <asp:Label ID="lblError" runat="server"></asp:Label>
-                            </div>
-                        </asp:Panel>
-                        <asp:Panel ID="panelSuccess" runat="server" Visible="False" CssClass="panel-center">
-                            <div class="success-msg">
-                                <i class="fa fa-check"></i>
-                                <asp:Label ID="lblSuccess" runat="server"></asp:Label>
-                            </div>
-                        </asp:Panel>
-                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row">
@@ -62,16 +74,13 @@
                                         </div>
                                         <asp:FileUpload ID="imageUploader" runat="server" CssClass="form-control" />
                                     </div>
-                                    <div>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="imageUploader" CssClass="text-danger" ErrorMessage="Image file is required."></asp:RequiredFieldValidator></div>
-                                    <div>
-                                        <asp:RegularExpressionValidator runat="server" ErrorMessage="Only images are allowed!" CssClass="text-danger" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.gif|.GIF|.jpg|.JPG|.jpeg|.JPEG)$" Display="None" ControlToValidate="imageUploader"></asp:RegularExpressionValidator>
-                                    </div>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" Display="Dynamic" runat="server" ControlToValidate="imageUploader" CssClass="text-danger" ErrorMessage="Image file is required."></asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator runat="server" Display="Dynamic" ErrorMessage="Only images are allowed!" CssClass="text-danger" ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.png|.gif|.GIF|.jpg|.JPG|.jpeg|.JPEG)$"  ControlToValidate="imageUploader"></asp:RegularExpressionValidator>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="/images/success-story.jpg"  width="470"/>
+                            <img src="/images/success-story.jpg" width="470" />
                         </div>
                     </div>
 

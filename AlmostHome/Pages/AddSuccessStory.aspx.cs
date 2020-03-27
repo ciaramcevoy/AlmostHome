@@ -55,7 +55,7 @@ namespace AlmostHome.Pages
             }
             catch (Exception ex)
             {
-                ShowError(ex.Message);
+                ShowError("Something went wrong. Please try again.");
             }
 
         }

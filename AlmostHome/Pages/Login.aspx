@@ -2,6 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
+        <asp:Panel ID="panelError" runat="server" Visible="False">
+            <div class="alert alert-danger">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">error_outline</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
         <div class="section text-center">
             <%--style="background-image: url('Content/images/login-bg.jpg');"--%>
             <div class="container">
@@ -12,13 +25,6 @@
                                 <h4 class="card-title">Admin Login</h4>
                             </div>
                             <div class="card-body">
-                                <asp:Panel ID="panelError" runat="server" Visible="False">
-                                    <div class="error-msg">
-                                        <i class="fa fa-times-circle"></i>
-                                        <asp:Label ID="lblError" runat="server"></asp:Label>
-                                    </div>
-                                </asp:Panel>
-                               
                                 <div>
                                     <div class="input-group">
                                         <div class="input-group-prepend">

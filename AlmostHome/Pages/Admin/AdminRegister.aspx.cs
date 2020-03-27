@@ -40,7 +40,7 @@ namespace AlmostHome.Pages.Admin
             catch (Exception ex)
             {
                 // displays error messsage
-                ShowError(ex.Message);
+                ShowError("Something went wrong. Please try again.");
             }
         }
 

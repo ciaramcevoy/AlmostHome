@@ -2,6 +2,32 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
+        <asp:Panel ID="panelWarn" runat="server" Visible="False">
+            <div class="alert alert-warning">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">warning</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblWarn" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="panelError" runat="server" Visible="False">
+            <div class="alert alert-danger">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">error_outline</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
         <div class="section text-center row" style="padding: 0 0;">
             <div class="col-md-12 card">
                 <div class="card-body">
@@ -50,18 +76,6 @@
             <div class="text-center row">
                 <div class="col-md-12 card">
                     <div class="card-body">
-                        <asp:Panel ID="panelWarn" runat="server" Visible="False">
-                            <div class="warning-msg">
-                                <i class="fa fa-warning"></i>
-                                <asp:Label ID="lblWarn" runat="server"></asp:Label>
-                            </div>
-                        </asp:Panel>
-                        <asp:Panel ID="panelError" runat="server" Visible="False">
-                            <div class="error-msg">
-                                <i class="fa fa-times-circle"></i>
-                                <asp:Label ID="lblError" runat="server"></asp:Label>
-                            </div>
-                        </asp:Panel>
                         <ul class="pagination">
                             <asp:Repeater ID="rptPager" runat="server">
                                 <ItemTemplate>

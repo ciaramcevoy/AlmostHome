@@ -556,24 +556,6 @@
 }
 
 
-.error-msg, .success-msg, .warning-msg {
-    padding: 10px;
-    border-radius: 3px 3px 3px 3px;
-    margin-left: 20px;
-}
-    .error-msg {   
-        color: #D8000C;
-        background-color: #FFBABA;        
-    }
-    .success-msg {
-        color: #270;
-        background-color: #DFF2BF;
-    }
-    .warning-msg {
-        color: #9F6000;
-        background-color: #FEEFB3;
-    }
-
 .container .panel-center {
     margin: auto;
 }
@@ -769,4 +751,31 @@
 .button-panel .img-raised {
     width: 150px !important;
     height: 150px !important;
+}
+
+
+
+
+
+
+.main .alert {
+    position: fixed;
+    left: 10%;
+    width: 80%;
+    z-index: 999;
+}
+
+.btn-box:hover {
+    background-color: #ded5d5;
+    border-color: #ded5d5;
+    box-shadow: 0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2);
+}
+
+.btn-box {
+    cursor: pointer;
+    padding: 0px 10px;   
+}
+
+.btn-box .info{
+    padding: 10px 0 0px;
 }

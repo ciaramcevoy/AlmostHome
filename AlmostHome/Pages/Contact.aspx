@@ -2,25 +2,37 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
+        <asp:Panel ID="panelSuccess" runat="server" Visible="False">
+            <div class="alert alert-success">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">check</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblSuccess" runat="server" CssClass="lblSuccess"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="panelError" runat="server" Visible="False">
+            <div class="alert alert-danger">
+                <div class="container">
+                    <div class="alert-icon">
+                        <i class="material-icons">error_outline</i>
+                    </div>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                    </button>
+                    <asp:Label ID="lblError" runat="server"></asp:Label>
+                </div>
+            </div>
+        </asp:Panel>
         <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto"/>
         <div class="section text-center" style="padding: 0 0;">
             <div class="row shadow">
                 <div class="card-body">
                     <h3 class="title">Contact Almost Home NI</h3>
-                    <div class="row pb-3">
-                    <asp:Panel ID="panelError" runat="server" Visible="False" CssClass="panel-center">
-                        <div class="error-msg">
-                            <i class="fa fa-times-circle"></i>
-                            <asp:Label ID="lblError" runat="server"></asp:Label>
-                        </div>
-                    </asp:Panel>
-                    <asp:Panel ID="panelSuccess" runat="server" Visible="False" CssClass="panel-center">
-                        <div class="success-msg">
-                            <i class="fa fa-check"></i>
-                            <asp:Label ID="lblSuccess" runat="server"></asp:Label>
-                        </div>
-                    </asp:Panel>
-                    </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="input-group">
@@ -115,6 +127,26 @@
             </div>
         </div>
     </div>
+    
+    <script type="text/javascript">
+        function Redirect(url) {
+            var html =
+                '<div id="dvCountDown" style="display:none;font-size:small;">You will be redirected after <span id="lblCount"></span>&nbsp;seconds.</div>';
+            $('.lblSuccess').append(html);
+            var seconds = 5;
+            var dvCountDown = document.getElementById("dvCountDown");
+            var lblCount = document.getElementById("lblCount");
+            dvCountDown.style.display = "block";
+            lblCount.innerHTML = seconds;
+            setInterval(function () {
+                seconds--;
+                lblCount.innerHTML = seconds;
+                if (seconds == 0) {
+                    window.location = url;
+                }
+            }, 1000);
+        }
+    </script>
 </asp:Content>
 
 
