@@ -29,7 +29,7 @@ namespace AlmostHome.Models
             con.Close();
         }
 
-        public static DataSet GetGetApplication()
+        public static DataSet GetGetApplication(bool isRehomed)
         {
             DataSet dataSet = new DataSet("dt");
 
@@ -38,7 +38,7 @@ namespace AlmostHome.Models
             {
                 SqlCommand cmd = new SqlCommand("sp_getAll_AnimalApplication", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
+                cmd.Parameters.AddWithValue("isRehomed", isRehomed);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
 

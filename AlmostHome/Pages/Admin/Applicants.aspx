@@ -7,34 +7,92 @@
                 <i class="material-icons">keyboard_backspace</i> Return to Admin Home
                 <div class="ripple-container"></div>
             </a>
-            <asp:GridView ID="gvAdoptApplication" runat="server" AutoGenerateColumns="false" Width="100%"
-                AllowPaging="true" PageSize="10" OnPageIndexChanging="gvAdoptApplication_PageIndexChanging" OnRowDataBound="OnRowDataBound"
-                DataKeyNames="ApplicationID,AnimalID"
-                CssClass="Grid"
-                AlternatingRowStyle-CssClass="alt"
-                PagerStyle-CssClass="pgr">
-                <Columns>
-                    <asp:BoundField DataField="ApplicationID" HeaderText="Application ID" SortExpression="ApplicationID" />
-                    <asp:BoundField DataField="ApplicantName" HeaderText="Applicant Name" SortExpression="ApplicantName" />
-                    <asp:BoundField DataField="AnimalName" HeaderText="Animal Name" SortExpression="AnimalName" />
-                    <asp:BoundField DataField="ApplicationDate" HeaderText="Applied Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="ApplicationDate" />
-                    <asp:BoundField DataField="ContactNumber" HeaderText="Contact Number" SortExpression="ContactNumber" />
-                    <asp:BoundField DataField="EmailAddress" HeaderText="Email" SortExpression="EmailAddress" />
-                    <asp:TemplateField HeaderText="Status">
-                        <ItemTemplate>
-                            <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status") %>' Visible="False" />
-                            <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged">
-                                <asp:ListItem Text="Submitted" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="Successful" Value="2"></asp:ListItem>
-                                <asp:ListItem Text="In Progress" Value="3"></asp:ListItem>
-                                <asp:ListItem Text="Unsuccessful" Value="0"></asp:ListItem>
-                            </asp:DropDownList>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
+            <h3 class="background"><span>Animal Adoption Requests</span></h3>
 
-            </asp:GridView>
+            <div class="tabset">
+                <!-- Tab 1 -->
+                <input type="radio" name="tabset" id="tab1" aria-controls="aciveApp" checked>
+                <label for="tab1">Active Applications</label>
+                <!-- Tab 2 -->
+                <input type="radio" name="tabset" id="tab2" aria-controls="pastApp">
+                <label for="tab2">Past Applications</label>
 
+                <div class="tab-panels">
+                    <section id="aciveApp" class="tab-panel">
+                        <div class="table-responsive">
+                            <table class="table" style="font-size: 14px;">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>Application ID</th>
+                                        <th>Applicant Name</th>
+                                        <th>Animal Name</th>
+                                        <th>Applied Date</th>
+                                        <th>Contact Number</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:ListView ID="lstGrid" runat="server" OnItemDataBound="lstGrid_OnItemDataBound">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%#Eval("ApplicationID")%></td>
+                                                <td><%#Eval("ApplicantName")%></td>
+                                                <td><%#Eval("AnimalName")%></td>
+                                                <td><%#Eval("ApplicationDate", "{0:d}")%></td>
+                                                <td><%#Eval("ContactNumber")%></td>
+                                                <td><%#Eval("EmailAddress")%></td>
+                                                <td>
+                                                    <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status") %>' Visible="False" />
+                                                    <asp:DropDownList ApplicationID='<%#Eval("ApplicationID")%>' AnimalID='<%#Eval("AnimalID")%>'
+                                                        ID="ddlStatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged" CssClass="form-control-sm btn-info select-center">
+                                                        <asp:ListItem Text="Submitted" Value="1"></asp:ListItem>
+                                                        <asp:ListItem Text="Successful" Value="2"></asp:ListItem>
+                                                        <asp:ListItem Text="In Progress" Value="3"></asp:ListItem>
+                                                        <asp:ListItem Text="Unsuccessful" Value="4"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:ListView>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section id="pastApp" class="tab-panel">
+                        <div class="table-responsive">
+                            <table class="table" style="font-size: 14px;">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>Application ID</th>
+                                        <th>Applicant Name</th>
+                                        <th>Animal Name</th>
+                                        <th>Applied Date</th>
+                                        <th>Contact Number</th>
+                                        <th>Email</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:ListView ID="lstGridPast" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%#Eval("ApplicationID")%></td>
+                                                <td><%#Eval("ApplicantName")%></td>
+                                                <td><%#Eval("AnimalName")%></td>
+                                                <td><%#Eval("ApplicationDate", "{0:d}")%></td>
+                                                <td><%#Eval("ContactNumber")%></td>
+                                                <td><%#Eval("EmailAddress")%></td>
+                                                <td>Rehomed</td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:ListView>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

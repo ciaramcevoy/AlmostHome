@@ -27,30 +27,10 @@ namespace AlmostHome.Pages.Admin
 
         public void BindVolunteerApplicationData()
         {
-            gvVolunteerApplication.DataSource = VolunteerApplication.GetVolunteerApplication();
-            gvVolunteerApplication.DataBind();
-        }
-
-        protected void gvVolunteerApplication_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gvVolunteerApplication.PageIndex = e.NewPageIndex;
-            BindVolunteerApplicationData();
-        }
-        
-        protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                DataRow dr = ((System.Data.DataRowView)e.Row.DataItem).Row;
-                if (dr != null)
-                {
-                    ((Label) e.Row.FindControl("lblPreferredUnit")).Text = Setting.UnitList().Find(x => x.ID == Convert.ToInt32(dr["PreferredUnit"])).Value;
-                    ((Label)e.Row.FindControl("lblAvailability")).Text = Setting.AvailabilityList().Find(x => x.ID == Convert.ToInt32(dr["Availability"])).Value;
-                    DropDownList ddlStatus = (e.Row.FindControl("ddlStatus") as DropDownList);
-                    string status = (e.Row.FindControl("lblStatus") as Label).Text;
-                    ddlStatus.Items.FindByValue(status).Selected = true;
-               }
-            }
+            lstGrid.DataSource = VolunteerApplication.GetVolunteerApplication(true);
+            lstGrid.DataBind();
+            lstGridPast.DataSource = VolunteerApplication.GetVolunteerApplication(false);
+            lstGridPast.DataBind();
         }
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,17 +38,50 @@ namespace AlmostHome.Pages.Admin
             try
             {
                 DropDownList dropDownList = sender as DropDownList;
-                GridViewRow row = (GridViewRow) dropDownList.Parent.Parent;
                 int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
-                int rowIndex = row.RowIndex;
-                int volunteerApplicationID = Convert.ToInt32(gvVolunteerApplication.DataKeys[rowIndex].Values[0]);
+                int volunteerApplicationID = Convert.ToInt32(dropDownList.Attributes["volunteerApplicationID"]);
                 VolunteerApplication.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue);
                 VolunteerApplication.SendEmailToApplicant(volunteerApplicationID, selectedValue);
+                BindVolunteerApplicationData();
             }
             catch (Exception ex)
             {
 
             }
+
         }
+
+        protected void lstGrid_OnItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                DropDownList ddlStatus = (e.Item.FindControl("ddlStatus") as DropDownList);
+                string status = (e.Item.FindControl("lblStatus") as Label).Text;
+                ddlStatus.Items.FindByValue(status).Selected = true;
+
+                Label lblPreferredUnit = (Label)e.Item.FindControl("lblPreferredUnit");
+                int preferredUnit = Convert.ToInt32(lblPreferredUnit.Attributes["PreferredUnit"]);
+                lblPreferredUnit.Text = Setting.UnitList().Find(x => x.ID == preferredUnit).Value;
+
+                Label lblAvailability = (Label)e.Item.FindControl("lblAvailability");
+                int availability = Convert.ToInt32(lblPreferredUnit.Attributes["PreferredUnit"]);
+                lblAvailability.Text = Setting.AvailabilityList().Find(x => x.ID == availability).Value;
+            }
+        }
+
+        protected void lstGridPast_OnItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                Label lblPreferredUnit = (Label)e.Item.FindControl("lblPreferredUnit");
+                int preferredUnit = Convert.ToInt32(lblPreferredUnit.Attributes["PreferredUnit"]);
+                lblPreferredUnit.Text = Setting.UnitList().Find(x => x.ID == preferredUnit).Value;
+
+                Label lblAvailability = (Label)e.Item.FindControl("lblAvailability");
+                int availability = Convert.ToInt32(lblPreferredUnit.Attributes["PreferredUnit"]);
+                lblAvailability.Text = Setting.AvailabilityList().Find(x => x.ID == availability).Value;
+            }
+        }
+
     }
 }

@@ -19,7 +19,7 @@ namespace AlmostHome.Models
         public string ContactNumber { get; set; }
         public string EmailAddress { get; set; }
 
-        public static DataSet GetVolunteerApplication()
+        public static DataSet GetVolunteerApplication(bool isActive)
         {
             DataSet dataSet = new DataSet("dt");
 
@@ -28,7 +28,7 @@ namespace AlmostHome.Models
             {
                 SqlCommand cmd = new SqlCommand("sp_getAll_VolunteerApplication", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-
+                cmd.Parameters.AddWithValue("isActive", isActive);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
 

@@ -13,12 +13,21 @@ namespace AlmostHome.Pages.Admin {
     public partial class Volunteers {
         
         /// <summary>
-        /// gvVolunteerApplication control.
+        /// lstGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvVolunteerApplication;
+        protected global::System.Web.UI.WebControls.ListView lstGrid;
+        
+        /// <summary>
+        /// lstGridPast control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView lstGridPast;
     }
 }

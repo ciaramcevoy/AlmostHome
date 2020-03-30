@@ -7,41 +7,94 @@
                 <i class="material-icons">keyboard_backspace</i> Return to Admin Home
                 <div class="ripple-container"></div>
             </a>
-            <asp:GridView ID="gvVolunteerApplication" runat="server" AutoGenerateColumns="false" Width="100%"
-                AllowPaging="true" PageSize="10" OnPageIndexChanging="gvVolunteerApplication_PageIndexChanging" OnRowDataBound="OnRowDataBound"
-                DataKeyNames="VolunteerApplicationID"
-                CssClass="Grid"
-                AlternatingRowStyle-CssClass="alt"
-                PagerStyle-CssClass="pgr">
-                <Columns>
-                    <asp:BoundField DataField="ApplicationDate" HeaderText="Applied Date" DataFormatString="{0:dd/MM/yyyy}" SortExpression="ApplicationDate" />
-                    <asp:BoundField DataField="VolunteerName" HeaderText="Name" SortExpression="VolunteerName" />
-                    <asp:BoundField DataField="ContactNumber" HeaderText="Contact Number" SortExpression="ContactNumber" />
-                    <asp:BoundField DataField="EmailAddress" HeaderText="Email" SortExpression="EmailAddress" />
-                    <asp:TemplateField HeaderText="Availability" SortExpression="Availability">
-                        <ItemTemplate>
-                            <asp:Label ID="lblAvailability" runat="server" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Preferred Unit" SortExpression="PreferredUnit">
-                        <ItemTemplate>
-                            <asp:Label ID="lblPreferredUnit" runat="server" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Status">
-                        <ItemTemplate>
-                            <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status") %>' Visible="False" />
-                            <asp:DropDownList ID="ddlStatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged">
-                                <asp:ListItem Text="Submitted" Value="1"></asp:ListItem>
-                                <asp:ListItem Text="Successful" Value="2"></asp:ListItem>
-                                <asp:ListItem Text="Waiting list" Value="3"></asp:ListItem>
-                            </asp:DropDownList>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                </Columns>
+            <h3 class="background"><span>Volunteer Applications</span></h3>
+            <div class="tabset">
+                <!-- Tab 1 -->
+                <input type="radio" name="tabset" id="tab1" aria-controls="aciveApp" checked>
+                <label for="tab1">Active Applications</label>
+                <!-- Tab 2 -->
+                <input type="radio" name="tabset" id="tab2" aria-controls="pastApp">
+                <label for="tab2">Past Applications</label>
 
-            </asp:GridView>
-
+                <div class="tab-panels">
+                    <section id="aciveApp" class="tab-panel">
+                        <div class="table-responsive">
+                            <table class="table" style="font-size: 14px;">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>Applied Date</th>
+                                        <th>Name</th>
+                                        <th>Contact Number</th>
+                                        <th>Email</th>
+                                        <th>Availability</th>
+                                        <th>Preferred Unit</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:ListView ID="lstGrid" runat="server" OnItemDataBound="lstGrid_OnItemDataBound">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%#Eval("ApplicationDate", "{0:d}")%></td>
+                                                <td><%#Eval("VolunteerName")%></td>
+                                                <td><%#Eval("ContactNumber")%></td>
+                                                <td><%#Eval("EmailAddress")%></td>
+                                                <td>
+                                                    <asp:Label ID="lblAvailability" runat="server" Availability='<%# Eval("Availability") %>' /></td>
+                                                <td>
+                                                    <asp:Label ID="lblPreferredUnit" runat="server" PreferredUnit='<%# Eval("PreferredUnit") %>' /></td>
+                                                <td>
+                                                    <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status") %>' Visible="False" />
+                                                    <asp:DropDownList VolunteerApplicationID='<%#Eval("VolunteerApplicationID")%>'
+                                                        ID="ddlStatus" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlStatus_SelectedIndexChanged" CssClass="form-control-sm btn-info select-center">
+                                                        <asp:ListItem Text="Submitted" Value="1"></asp:ListItem>
+                                                        <asp:ListItem Text="Successful" Value="2"></asp:ListItem>
+                                                        <asp:ListItem Text="Waiting list" Value="3"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:ListView>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section id="pastApp" class="tab-panel">
+                       <div class="table-responsive">
+                            <table class="table" style="font-size: 14px;">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>Applied Date</th>
+                                        <th>Name</th>
+                                        <th>Contact Number</th>
+                                        <th>Email</th>
+                                        <th>Availability</th>
+                                        <th>Preferred Unit</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:ListView ID="lstGridPast" runat="server" OnItemDataBound="lstGridPast_OnItemDataBound">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%#Eval("ApplicationDate", "{0:d}")%></td>
+                                                <td><%#Eval("VolunteerName")%></td>
+                                                <td><%#Eval("ContactNumber")%></td>
+                                                <td><%#Eval("EmailAddress")%></td>
+                                                <td>
+                                                    <asp:Label ID="lblAvailability" runat="server" Availability='<%# Eval("Availability") %>' /></td>
+                                                <td>
+                                                    <asp:Label ID="lblPreferredUnit" runat="server" PreferredUnit='<%# Eval("PreferredUnit") %>' /></td>
+                                                <td>Approved</td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:ListView>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>
