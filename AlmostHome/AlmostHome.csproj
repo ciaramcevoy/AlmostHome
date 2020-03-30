@@ -113,6 +113,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\material-kit\material-dashboard.css" />
     <Content Include="Content\material-kit\material-kit.css" />
     <Content Include="Content\wizard\form-elements.css" />
     <Content Include="Content\wizard\style.css" />
@@ -225,8 +226,12 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\material-kit\bootstrap-material-design.min.js" />
+    <Content Include="Scripts\material-kit\material-dashboard.js" />
     <Content Include="Scripts\material-kit\material-kit.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\plugins\chartist.min.js" />
+    <Content Include="Scripts\plugins\jquery.dataTables.min.js" />
+    <Content Include="Scripts\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />

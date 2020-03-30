@@ -28,7 +28,7 @@
                 </div>
             </div>
         </asp:Panel>
-        <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto"/>
+        <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto" />
         <div class="section text-center" style="padding: 0 0;">
             <div class="row shadow">
                 <div class="card-body">
@@ -114,20 +114,17 @@
                     <iframe width="100%" height="400" frameborder="0" style="border: 0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJR7FVWEP9YEgREEK9WBg4z4M&key=AIzaSyAr923H27qKCWJFpQ-p4MOPqQaKKoSwvT0" allowfullscreen></iframe>
                 </div>
                 <div class="col-md-3">
-                    <address>
-                        6 Grovehill Road<br />
-                        Moira<br />
-                        Craigavon, UK<br />
+                    <div class="card">
+                        <p class="h5">6 Grovehill Road<br />Moira<br />Craigavon, UK</p>
+                        <p class="h5">Phone: 07922921852</p>
                         <br />
-                        Phone: 07922921852<br />
-                        <br />
-                        Email: <a href="mailto:almosthomeadopt@gmail.com">almosthomeadopt@gmail.com</a>
-                    </address>
+                        <p class="h5">Email: <a href="mailto:almosthomeadopt@gmail.com">almosthomeadopt@gmail.com</a></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script type="text/javascript">
         function Redirect(url) {
             var html =

@@ -4,10 +4,12 @@
     <div class="container main-content">
         <div class="section text-center row" style="padding: 0 0;">
             <div class="col-md-12 card">
-                <div class="card-header">
-                    <h4 class="card-title">Available Animals</h4>
-                </div>
                 <div class="card-body">
+                    <a class="btn btn-default btn-round btn-sm float-right" href="/Pages/Admin/Index">
+                        <i class="material-icons">keyboard_backspace</i> Return to Admin Home
+                        <div class="ripple-container"></div>
+                    </a>
+                    <h3 class="background"><span>Available Animals</span></h3>
                     <asp:ListView ID="lstAnimal" runat="server">
                         <LayoutTemplate>
                             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />

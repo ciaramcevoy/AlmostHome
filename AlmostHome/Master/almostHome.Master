@@ -74,7 +74,7 @@
                                 <i class="material-icons">phone</i> Contact Us
                             </a>
                         </li>
-                       
+
                     </ul>
                     <ul id="navLogin" runat="server" class="navbar-nav navbar-right">
                         <li class="nav-item">
@@ -142,11 +142,15 @@
             </div>
         </div>
     </footer>
-<script src="/Scripts/jquery-3.3.1.min.js"></script>
-<script src="/Scripts/popper.min.js"></script>
-<script src="/Scripts/bootstrap.min.js"></script>
-<script src="/Scripts/material-kit/bootstrap-material-design.min.js"></script>
-<script src="/Scripts/material-kit/material-kit.js"></script>
+    <script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="/Scripts/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/material-kit/bootstrap-material-design.min.js"></script>
+    <script src="/Scripts/material-kit/material-kit.js"></script>
+    <script src="/Scripts/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="/Scripts/material-kit/material-dashboard.js"></script>
 
+    <script src="/Scripts/plugins/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/plugins/chartist.min.js"></script>
 </body>
 </html>
