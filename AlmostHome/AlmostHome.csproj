@@ -49,6 +49,12 @@
     <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.bootstrap.4.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.1\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -164,6 +170,9 @@
     <Content Include="Pages\Admin\Index.aspx" />
     <Content Include="Pages\Admin\Logout.aspx" />
     <Content Include="Pages\Admin\Reports.aspx" />
+    <Content Include="Pages\Admin\Report\RptAnimalApplications.aspx" />
+    <Content Include="Pages\Admin\Report\RptAnimals.aspx" />
+    <Content Include="Pages\Admin\Report\RptVolunteerApplications.aspx" />
     <Content Include="Pages\Admin\ReviewSuccessStories.aspx" />
     <Content Include="Pages\Admin\Volunteers.aspx" />
     <Content Include="Pages\Adopt.aspx" />
@@ -196,6 +205,7 @@
     <Content Include="Pages\Email\ContactUsTemplate.html" />
     <Content Include="Pages\Email\EmailTemplate.html" />
     <Content Include="Pages\SuccessStories.aspx" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -229,6 +239,7 @@
     <Content Include="Scripts\material-kit\material-dashboard.js" />
     <Content Include="Scripts\material-kit\material-kit.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\plugins\chartist.min.js" />
     <Content Include="Scripts\plugins\jquery.dataTables.min.js" />
     <Content Include="Scripts\plugins\perfect-scrollbar.jquery.min.js" />
@@ -338,11 +349,13 @@
     <Compile Include="Common\DBCon.cs" />
     <Compile Include="Common\Email.cs" />
     <Compile Include="Common\Encryption.cs" />
+    <Compile Include="Common\PDF.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\AnimalApplication.cs" />
     <Compile Include="Models\AnimalType.cs" />
     <Compile Include="Models\Applicant.cs" />
+    <Compile Include="Models\Reporting.cs" />
     <Compile Include="Models\Setting.cs" />
     <Compile Include="Models\SuccessStory.cs" />
     <Compile Include="Models\Volunteer.cs" />
@@ -416,6 +429,27 @@
     </Compile>
     <Compile Include="Pages\Admin\Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Report\RptAnimalApplications.aspx.cs">
+      <DependentUpon>RptAnimalApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Report\RptAnimalApplications.aspx.designer.cs">
+      <DependentUpon>RptAnimalApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Report\RptAnimals.aspx.cs">
+      <DependentUpon>RptAnimals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Report\RptAnimals.aspx.designer.cs">
+      <DependentUpon>RptAnimals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin\Report\RptVolunteerApplications.aspx.cs">
+      <DependentUpon>RptVolunteerApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin\Report\RptVolunteerApplications.aspx.designer.cs">
+      <DependentUpon>RptVolunteerApplications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Admin\ReviewSuccessStories.aspx.cs">
       <DependentUpon>ReviewSuccessStories.aspx</DependentUpon>

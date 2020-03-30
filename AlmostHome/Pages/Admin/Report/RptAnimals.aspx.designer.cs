@@ -7,90 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlmostHome.Pages.Admin {
+namespace AlmostHome.Pages.Admin.Report {
     
     
-    public partial class Reports {
+    public partial class RptAnimals {
         
         /// <summary>
-        /// ddlReportType control.
+        /// reportPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlReportType;
+        protected global::System.Web.UI.WebControls.Panel reportPanel;
         
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// lblReporTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.Label lblReporTitle;
         
         /// <summary>
-        /// panelAnimal control.
+        /// lblFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAnimal;
+        protected global::System.Web.UI.WebControls.Label lblFrom;
         
         /// <summary>
-        /// ddlAnimalStatus control.
+        /// lblTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlAnimalStatus;
+        protected global::System.Web.UI.WebControls.Label lblTo;
         
         /// <summary>
-        /// txFrom control.
+        /// lstGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txFrom;
+        protected global::System.Web.UI.WebControls.ListView lstGrid;
         
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// lblTotalRecords control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.Label lblTotalRecords;
         
         /// <summary>
-        /// txtTo control.
+        /// lblReportDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTo;
+        protected global::System.Web.UI.WebControls.Label lblReportDate;
         
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// lblGeneratedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.Label lblGeneratedBy;
         
         /// <summary>
-        /// RunBtn control.
+        /// btnDownload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button RunBtn;
+        protected global::System.Web.UI.WebControls.Button btnDownload;
     }
 }
