@@ -143,6 +143,39 @@ namespace AlmostHome.Models
             con.Close();
             return volunteerApplication;
         }
+
+        public static int[] GetWeeklyVolunteerApplicants()
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>
+            {
+                {"Monday", 0},
+                {"Tuesday", 0},
+                {"Wednesday", 0},
+                {"Thursday", 0},
+                {"Friday", 0},
+                {"Saturday", 0},
+                {"Sunday ", 0}
+            };
+
+            List<int> list = new List<int>(); ;
+            SqlDataReader rd;
+            using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
+            {
+                SqlCommand cmd = new SqlCommand("sp_get_WeeklyVolunteerApplication", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    if (dict.ContainsKey(rd["Day"].ToString()))
+                    {
+                        dict[rd["Day"].ToString()] = Convert.ToInt32(rd["Count"]);
+                    }
+                }
+                rd.Close();
+            }
+            return dict.Values.ToArray();
+        }
     }
     
 }

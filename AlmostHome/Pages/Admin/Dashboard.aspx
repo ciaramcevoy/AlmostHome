@@ -1,484 +1,466 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="AlmostHome.Pages.Admin.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<link href="/Content/material-kit/material-dashboard.css" rel="stylesheet" />
-    <div class="container main-content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
-                  </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
-                  </h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="javascript:;">Get More Space...</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">store</i>
-                  </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-info card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-twitter"></i>
-                  </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart" id="dailySalesChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="72.66517857142857" x2="72.66517857142857" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="105.33035714285714" x2="105.33035714285714" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="137.99553571428572" x2="137.99553571428572" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="170.66071428571428" x2="170.66071428571428" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="203.32589285714283" x2="203.32589285714283" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="235.99107142857142" x2="235.99107142857142" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line y1="120" y2="120" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M 40 91.2 C 72.665 79.2 72.665 79.2 72.665 79.2 C 105.33 103.2 105.33 103.2 105.33 103.2 C 137.996 79.2 137.996 79.2 137.996 79.2 C 170.661 64.8 170.661 64.8 170.661 64.8 C 203.326 76.8 203.326 76.8 203.326 76.8 C 235.991 28.8 235.991 28.8 235.991 28.8" class="ct-line"></path><line x1="40" y1="91.2" x2="40.01" y2="91.2" class="ct-point" ct:value="12" opacity="1"></line><line x1="72.66517857142857" y1="79.2" x2="72.67517857142857" y2="79.2" class="ct-point" ct:value="17" opacity="1"></line><line x1="105.33035714285714" y1="103.2" x2="105.34035714285714" y2="103.2" class="ct-point" ct:value="7" opacity="1"></line><line x1="137.99553571428572" y1="79.2" x2="138.0055357142857" y2="79.2" class="ct-point" ct:value="17" opacity="1"></line><line x1="170.66071428571428" y1="64.8" x2="170.67071428571427" y2="64.8" class="ct-point" ct:value="23" opacity="1"></line><line x1="203.32589285714283" y1="76.8" x2="203.33589285714282" y2="76.8" class="ct-point" ct:value="18" opacity="1"></line><line x1="235.99107142857142" y1="28.799999999999997" x2="236.0010714285714" y2="28.799999999999997" class="ct-point" ct:value="38" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="32.66517857142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="72.66517857142857" y="125" width="32.66517857142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">T</span></foreignObject><foreignObject style="overflow: visible;" x="105.33035714285714" y="125" width="32.66517857142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">W</span></foreignObject><foreignObject style="overflow: visible;" x="137.99553571428572" y="125" width="32.66517857142857" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">T</span></foreignObject><foreignObject style="overflow: visible;" x="170.66071428571428" y="125" width="32.665178571428555" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="203.32589285714283" y="125" width="32.665178571428584" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="235.99107142857142" y="125" width="32.665178571428584" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 33px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">10</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">20</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">30</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">40</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">50</span></foreignObject></g></svg></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
-                  <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="websiteViewsChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-bar" style="width: 100%; height: 100%;"><g class="ct-grids"><line y1="120" y2="120" x1="40" x2="263.65625" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="263.65625" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="263.65625" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="263.65625" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="263.65625" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="263.65625" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><line x1="49.319010416666664" x2="49.319010416666664" y1="120" y2="54.959999999999994" class="ct-bar" ct:value="542" opacity="1"></line><line x1="67.95703125" x2="67.95703125" y1="120" y2="66.84" class="ct-bar" ct:value="443" opacity="1"></line><line x1="86.59505208333333" x2="86.59505208333333" y1="120" y2="81.6" class="ct-bar" ct:value="320" opacity="1"></line><line x1="105.23307291666667" x2="105.23307291666667" y1="120" y2="26.400000000000006" class="ct-bar" ct:value="780" opacity="1"></line><line x1="123.87109375" x2="123.87109375" y1="120" y2="53.64" class="ct-bar" ct:value="553" opacity="1"></line><line x1="142.50911458333331" x2="142.50911458333331" y1="120" y2="65.64" class="ct-bar" ct:value="453" opacity="1"></line><line x1="161.14713541666666" x2="161.14713541666666" y1="120" y2="80.88" class="ct-bar" ct:value="326" opacity="1"></line><line x1="179.78515624999997" x2="179.78515624999997" y1="120" y2="67.92" class="ct-bar" ct:value="434" opacity="1"></line><line x1="198.42317708333331" x2="198.42317708333331" y1="120" y2="51.84" class="ct-bar" ct:value="568" opacity="1"></line><line x1="217.06119791666666" x2="217.06119791666666" y1="120" y2="46.8" class="ct-bar" ct:value="610" opacity="1"></line><line x1="235.69921874999997" x2="235.69921874999997" y1="120" y2="29.28" class="ct-bar" ct:value="756" opacity="1"></line><line x1="254.33723958333331" x2="254.33723958333331" y1="120" y2="12.599999999999994" class="ct-bar" ct:value="895" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="18.638020833333332" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="58.63802083333333" y="125" width="18.638020833333332" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">F</span></foreignObject><foreignObject style="overflow: visible;" x="77.27604166666666" y="125" width="18.638020833333336" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="95.9140625" y="125" width="18.63802083333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="114.55208333333333" y="125" width="18.63802083333333" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">M</span></foreignObject><foreignObject style="overflow: visible;" x="133.19010416666666" y="125" width="18.638020833333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="151.828125" y="125" width="18.638020833333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">J</span></foreignObject><foreignObject style="overflow: visible;" x="170.46614583333331" y="125" width="18.638020833333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">A</span></foreignObject><foreignObject style="overflow: visible;" x="189.10416666666666" y="125" width="18.638020833333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">S</span></foreignObject><foreignObject style="overflow: visible;" x="207.7421875" y="125" width="18.638020833333314" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">O</span></foreignObject><foreignObject style="overflow: visible;" x="226.38020833333331" y="125" width="18.638020833333343" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 19px; height: 20px;">N</span></foreignObject><foreignObject style="overflow: visible;" x="245.01822916666666" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">D</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Email Subscriptions</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-line" style="width: 100%; height: 100%;"><g class="ct-grids"><line x1="40" x2="40" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="68.58203125" x2="68.58203125" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="97.1640625" x2="97.1640625" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="125.74609375" x2="125.74609375" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="154.328125" x2="154.328125" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="182.91015625" x2="182.91015625" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="211.4921875" x2="211.4921875" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line x1="240.07421875" x2="240.07421875" y1="0" y2="120" class="ct-grid ct-horizontal"></line><line y1="120" y2="120" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="96" y2="96" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="72" y2="72" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="48" y2="48" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="24" y2="24" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line><line y1="0" y2="0" x1="40" x2="268.65625" class="ct-grid ct-vertical"></line></g><g><g class="ct-series ct-series-a"><path d="M 40 92.4 C 68.582 30 68.582 30 68.582 30 C 97.164 66 97.164 66 97.164 66 C 125.746 84 125.746 84 125.746 84 C 154.328 86.4 154.328 86.4 154.328 86.4 C 182.91 91.2 182.91 91.2 182.91 91.2 C 211.492 96 211.492 96 211.492 96 C 240.074 97.2 240.074 97.2 240.074 97.2" class="ct-line"></path><line x1="40" y1="92.4" x2="40.01" y2="92.4" class="ct-point" ct:value="230" opacity="1"></line><line x1="68.58203125" y1="30" x2="68.59203125" y2="30" class="ct-point" ct:value="750" opacity="1"></line><line x1="97.1640625" y1="66" x2="97.1740625" y2="66" class="ct-point" ct:value="450" opacity="1"></line><line x1="125.74609375" y1="84" x2="125.75609375" y2="84" class="ct-point" ct:value="300" opacity="1"></line><line x1="154.328125" y1="86.4" x2="154.338125" y2="86.4" class="ct-point" ct:value="280" opacity="1"></line><line x1="182.91015625" y1="91.2" x2="182.92015625" y2="91.2" class="ct-point" ct:value="240" opacity="1"></line><line x1="211.4921875" y1="96" x2="211.5021875" y2="96" class="ct-point" ct:value="200" opacity="1"></line><line x1="240.07421875" y1="97.2" x2="240.08421875" y2="97.2" class="ct-point" ct:value="190" opacity="1"></line></g></g><g class="ct-labels"><foreignObject style="overflow: visible;" x="40" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">12p</span></foreignObject><foreignObject style="overflow: visible;" x="68.58203125" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">3p</span></foreignObject><foreignObject style="overflow: visible;" x="97.1640625" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">6p</span></foreignObject><foreignObject style="overflow: visible;" x="125.74609375" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">9p</span></foreignObject><foreignObject style="overflow: visible;" x="154.328125" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">12p</span></foreignObject><foreignObject style="overflow: visible;" x="182.91015625" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">3a</span></foreignObject><foreignObject style="overflow: visible;" x="211.4921875" y="125" width="28.58203125" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 29px; height: 20px;">6a</span></foreignObject><foreignObject style="overflow: visible;" x="240.07421875" y="125" width="30" height="20"><span class="ct-label ct-horizontal ct-end" xmlns="http://www.w3.org/2000/xmlns/" style="width: 30px; height: 20px;">9a</span></foreignObject><foreignObject style="overflow: visible;" y="96" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">0</span></foreignObject><foreignObject style="overflow: visible;" y="72" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">200</span></foreignObject><foreignObject style="overflow: visible;" y="48" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">400</span></foreignObject><foreignObject style="overflow: visible;" y="24" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">600</span></foreignObject><foreignObject style="overflow: visible;" y="0" x="0" height="24" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 24px; width: 30px;">800</span></foreignObject><foreignObject style="overflow: visible;" y="-30" x="0" height="30" width="30"><span class="ct-label ct-vertical ct-start" xmlns="http://www.w3.org/2000/xmlns/" style="height: 30px; width: 30px;">1000</span></foreignObject></g></svg></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Completed Tasks</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-tabs card-header-primary">
-                  <div class="nav-tabs-navigation">
-                    <div class="nav-tabs-wrapper">
-                      <span class="nav-tabs-title">Tasks:</span>
-                      <ul class="nav nav-tabs" data-tabs="tabs">
-                        <li class="nav-item">
-                          <a class="nav-link active" href="#profile" data-toggle="tab">
-                            <i class="material-icons">bug_report</i> Bugs
-                            <div class="ripple-container"></div>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#messages" data-toggle="tab">
-                            <i class="material-icons">code</i> Website
-                            <div class="ripple-container"></div>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#settings" data-toggle="tab">
-                            <i class="material-icons">cloud</i> Server
-                            <div class="ripple-container"></div>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="tab-content">
-                    <div class="tab-pane active" id="profile">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="tab-pane" id="messages">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div class="tab-pane" id="settings">
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit Task">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Remove">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-warning">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead class="text-warning">
-                      <tr><th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
-                    </tr></thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    <%--    <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-                <div class="card card-chart">
-                    <div class="card-header card-header-rose" data-header-animation="true">
-                        <div class="ct-chart" id="websiteViewsChart"></div>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-actions">
-                            <button type="button" class="btn btn-danger btn-link fix-broken-card">
-                                <i class="material-icons">build</i> Fix Header!
-                            </button>
+    <link href="/Content/material-kit/material-dashboard.css" rel="stylesheet" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-                            <button type="button" class="btn btn-info btn-link" rel="tooltip" data-placement="bottom" title="Refresh">
-                                <i class="material-icons">refresh</i>
-                            </button>
-                            <button type="button" class="btn btn-default btn-link" rel="tooltip" data-placement="bottom" title="Change Date">
-                                <i class="material-icons">edit</i>
-                            </button>
+        #availableTypes, #rehomedTypes {
+            width: 400px;
+            height: 150px;
+            position: relative;
+            right: 50px;
+        }
+
+            #availableTypes::before, #rehomedTypes::before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 100px;
+                height: 145px;
+                left: 250px;
+                top: 0;
+                background: #FAFAFA;
+                box-shadow: 1px 1px 0 0 #DDD;
+            }
+    </style>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <div class="container main-content">
+        <div class="card-body">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-warning card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">store</i>
+                                    </div>
+                                    <p class="card-category mr-2">Capacity</p>
+                                    <h3 class="card-title">49/50
+                                    </h3>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
                         </div>
-                        <h4 class="card-title">Website Views</h4>
-                        <p class="card-category">Last Campaign Performance</p>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-success card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">home</i>
+                                    </div>
+                                    <p class="card-category mr-2">Rehomed</p>
+                                    <h3 class="card-title">50</h3>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-danger card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">accessibility_new</i>
+                                    </div>
+                                    <p class="card-category mr-2">Volunteers</p>
+                                    <h3 class="card-title">75</h3>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header card-header-info card-header-icon">
+                                    <div class="card-icon">
+                                        <i class="material-icons">pets</i>
+                                    </div>
+                                    <p class="card-category mr-2">Animals</p>
+                                    <h3 class="card-title">245</h3>
+                                </div>
+                                <div class="card-footer"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header card-header-success">
+                                    <div class="ct-chart" id="weeklyApplicants"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Weekly Applicants</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header card-header-warning">
+                                    <div class="ct-chart" id="weeklyVolunteerApplications"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Weekly Volunteer Applications</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-chart">
+                                <div class="card-header card-header-danger">
+                                    <div class="ct-chart" id="weeklyRehomedAnimals"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Weekly Rehomed Animals</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> campaign sent 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="card card-chart">
+                                <div class="card-header" style="background-color: #f3eeee">
+                                    <div id="availableTypes"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Animal Types (Available)</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="card card-chart">
+                                <div class="card-header" style="background-color: #f3eeee">
+                                    <div id="rehomedTypes"></div>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Animal Types (Rehomed)</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header card-chart card-header-warning">
-                        <div class="ct-chart" id="dailySalesChart"></div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Daily Sales</h4>
-                        <p class="card-category"><span class="text-success"><i class="fa fa-long-arrow-up"></i>55%  </span>increase in today sales.</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> updated 4 minutes ago
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header card-chart card-header-success">
-                        <div class="ct-chart" id="completedTasksChart"></div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Completed Tasks</h4>
-                        <p class="card-category">Last Campaign Performance</p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="stats">
-                            <i class="material-icons">access_time</i> updated 2 minutes ago
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>--%>
     </div>
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+    <script src="/Scripts/material-kit/material-dashboard.js"></script>
+    <script type="text/javascript">
+        //google charts
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawCharts);
+        function drawCharts() {
+            getAnimalsByType(false);
+            getAnimalsByType(true);
+        }
+        function drawAnimalPieChart(arrayData, isRehomed) {
+            // pie chart data
+            var pieData = google.visualization.arrayToDataTable(arrayData);
+            // pie chart options
+            var pieOptions = {
+                backgroundColor: 'transparent',
+                pieHole: 0.4,
+                colors: ["cornflowerblue",
+                    "olivedrab",
+                    "orange",
+                    "tomato",
+                    "crimson",
+                    "purple",
+                    "turquoise",
+                    "forestgreen",
+                    "navy",
+                    "gray"],
+                pieSliceText: 'value',
+                tooltip: {
+                    text: 'percentage'
+                },
+                fontName: 'Open Sans',
+                chartArea: {
+                    width: '100%',
+                    height: '94%'
+                },
+                legend: {
+                    textStyle: {
+                        fontSize: 13
+                    }
+                }
+            };
+            // draw pie chart
+            var pieChart;
+            if (isRehomed) {
+                pieChart = new google.visualization.PieChart(document.getElementById('rehomedTypes'));
+            } else {
+                pieChart = new google.visualization.PieChart(document.getElementById('availableTypes'));
+            }
+
+            pieChart.draw(pieData, pieOptions);
+        }
+        function getAnimalsByType(isRehomed) {
+            $.ajax({
+                type: "POST",
+                url: "<%= ResolveUrl("Dashboard.aspx/GetAnimalsByType") %>",
+                data: JSON.stringify({ 'isRehomed': isRehomed }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    var array = [['Type of Animal', 'Count']];
+                    $(response.d).each(function (index, value) {
+                        array.push([value.Type, value.Count]);
+                    });
+                    drawAnimalPieChart(array, isRehomed);
+                },
+                failure: function (response) {
+
+                }
+            });
+        }
+
+
+        //material design charts
+        
+        var seq = 0, delays = 80, durations = 500;
+        var seq2 = 0, delays2 = 80, durations2 = 500;
+        
+
+        var md = {
+            initDashboardPageCharts: function () {
+
+                if ($('#weeklyVolunteerApplications').length != 0) {
+                    md.getWeeklyVolunteerApplicantsChart();
+                }
+
+                if ($('#weeklyApplicants').length != 0) {
+                    md.getWeeklyApplicantsChart();
+                }
+
+                if ($('#weeklyRehomedAnimals').length != 0) {
+                    md.getWeeklyRehomedAnimalsChart();
+                }
+            },
+            startAnimationForLineChart: function (chart) {
+                chart.on('draw', function (data) {
+                    if (data.type === 'line' || data.type === 'area') {
+                        data.element.animate({
+                            d: {
+                                begin: 600,
+                                dur: 700,
+                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+                                to: data.path.clone().stringify(),
+                                easing: Chartist.Svg.Easing.easeOutQuint
+                            }
+                        });
+                    } else if (data.type === 'point') {
+                        seq++;
+                        data.element.animate({
+                            opacity: {
+                                begin: seq * delays,
+                                dur: durations,
+                                from: 0,
+                                to: 1,
+                                easing: 'ease'
+                            }
+                        });
+                    }
+                });
+
+                seq = 0;
+            },
+            startAnimationForBarChart: function (chart) {
+
+                chart.on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        seq2++;
+                        data.element.animate({
+                            opacity: {
+                                begin: seq2 * delays2,
+                                dur: durations2,
+                                from: 0,
+                                to: 1,
+                                easing: 'ease'
+                            }
+                        });
+                    }
+                });
+
+                seq2 = 0;
+            },
+            initWeeklyVolunteerApplicantsChart: function (array) {
+                /* ----------==========     Weekly Volunteer Applications Chart initialization    ==========---------- */
+
+                var dataWeeklyVolunteerApplicants = {
+                    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                    series: [
+                        array
+                    ]
+                };
+                var optionsWeeklyVolunteerApplicants = {
+                    axisX: {
+                        showGrid: false
+                    },
+                    low: 0,
+                    high: 20,
+                    chartPadding: {
+                        top: 0,
+                        right: 5,
+                        bottom: 0,
+                        left: 0
+                    }
+                };
+                var responsiveOptions = [
+                    ['screen and (max-width: 640px)', {
+                        seriesBarDistance: 5,
+                        axisX: {
+                            labelInterpolationFnc: function (value) {
+                                return value[0];
+                            }
+                        }
+                    }]
+                ];
+                var weeklyVolunteerApplications = Chartist.Bar('#weeklyVolunteerApplications', dataWeeklyVolunteerApplicants, optionsWeeklyVolunteerApplicants, responsiveOptions);
+                md.startAnimationForBarChart(weeklyVolunteerApplications);
+            },
+            initWeeklyApplicants: function(array) {
+                /* ----------==========     Weekly Applicants Chart initialization    ==========---------- */
+
+                dataWeeklyApplicantsChart = {
+                    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                    series: [
+                        array
+                    ]
+                };
+
+                optionsWeeklyApplicantsChart = {
+                    lineSmooth: Chartist.Interpolation.cardinal({
+                        tension: 0
+                    }),
+                    low: 0,
+                    high: 20, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+                    chartPadding: {
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    },
+                }
+
+                var weeklyApplicants = new Chartist.Line('#weeklyApplicants', dataWeeklyApplicantsChart, optionsWeeklyApplicantsChart);
+
+                md.startAnimationForLineChart(weeklyApplicants);
+            },
+            initWeeklyRehomedAnimals: function(array) {
+                /* ----------==========     Weekly Rehomed Animals Chart initialization    ==========---------- */
+
+                dataWeeklyRehomedAnimalsChart = {
+                    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                    series: [
+                        array
+                    ]
+                };
+
+                optionsWeeklyRehomedAnimalsChart = {
+                    lineSmooth: Chartist.Interpolation.cardinal({
+                        tension: 0
+                    }),
+                    low: 0,
+                    high: 20, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+                    chartPadding: {
+                        top: 0,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    }
+                }
+
+                var weeklyRehomedAnimals = new Chartist.Line('#weeklyRehomedAnimals', dataWeeklyRehomedAnimalsChart, optionsWeeklyRehomedAnimalsChart);
+
+                // start animation for the Completed Tasks Chart - Line Chart
+                md.startAnimationForLineChart(weeklyRehomedAnimals);
+            },
+
+            getWeeklyVolunteerApplicantsChart: function () {
+                $.ajax({
+                    type: "POST",
+                    url: "<%= ResolveUrl("Dashboard.aspx/GetWeeklyVolunteerApplicants") %>",
+                    data: {},
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        md.initWeeklyVolunteerApplicantsChart(response.d);
+                    },
+                    failure: function (response) {
+
+                    }
+                });
+            },
+
+            getWeeklyApplicantsChart: function() {
+                $.ajax({
+                    type: "POST",
+                    url: "<%= ResolveUrl("Dashboard.aspx/GetWeeklyApplicants") %>",
+                    data: {},
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        md.initWeeklyApplicants(response.d);
+                    },
+                    failure: function (response) {
+
+                    }
+                });
+            },
+            getWeeklyRehomedAnimalsChart: function() {
+                $.ajax({
+                    type: "POST",
+                    url: "<%= ResolveUrl("Dashboard.aspx/GetWeeklyRehomedAnimals") %>",
+                    data: {},
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        md.initWeeklyRehomedAnimals(response.d);
+                    },
+                    failure: function (response) {
+
+                    }
+                });
+            }
+        }
+
+        $(window).resize(function () {
+            setTimeout(function () {
+                md.initDashboardPageCharts();
+            }, 500);
+        });
+        
+
+        $(document).ready(function() {
+            $('body').bootstrapMaterialDesign();
+            $('[rel="tooltip"]').tooltip();
+           
+            md.initDashboardPageCharts();
+            setInterval(function() {
+                md.initDashboardPageCharts();
+                drawCharts();
+            }, 1 * 60 * 1000); // 60 * 1000 milsec
+        });
+    </script>
 </asp:Content>

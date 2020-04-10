@@ -132,6 +132,76 @@ namespace AlmostHome.Models
             return animal;
             
         }
+
+        public static List<TypeObject> GetAnimalsByType(bool isRehomed)
+        {
+            List<TypeObject> typeList = new List<TypeObject>(); ;
+            SqlDataReader rd;
+            using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
+            {
+                SqlCommand cmd = new SqlCommand("sp_get_AnimalsbyType", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@rehomed", isRehomed);
+                con.Open();
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    TypeObject type = new TypeObject();
+                    type.Type = rd["Type"].ToString();
+                    type.Count = Convert.ToInt32(rd["Count"]);
+                    typeList.Add(type);
+
+
+                }
+                rd.Close();
+            }
+            return typeList;
+        }
+
+        public static int[] GetWeeklyRehomedAnimals()
+        {
+            Dictionary<string, int> dict = new Dictionary<string, int>
+            {
+                {"Monday", 0},
+                {"Tuesday", 0},
+                {"Wednesday", 0},
+                {"Thursday", 0},
+                {"Friday", 0},
+                {"Saturday", 0},
+                {"Sunday ", 0}
+            };
+
+            List<int> list = new List<int>(); ;
+            SqlDataReader rd;
+            using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
+            {
+                //https://stackoverflow.com/questions/1110998/get-day-of-week-in-sql-server-2005-2008
+                //https://stackoverflow.com/questions/23051197/how-to-get-data-of-current-week-only-in-sql-server
+                //check the sp
+                SqlCommand cmd = new SqlCommand("sp_get_WeeklyRehomedAnimals", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    if (dict.ContainsKey(rd["Day"].ToString()))
+                    {
+                        dict[rd["Day"].ToString()] = Convert.ToInt32(rd["Count"]);
+                    }
+                }
+                rd.Close();
+            }
+            //https://stackoverflow.com/questions/197059/convert-dictionary-values-into-array
+            return dict.Values.ToArray();
+        }
     }
 
+    public class TypeObject
+    {
+        public string Type { get; set; }
+        public int Count { get; set; }
+    }
+
+
+   
 }
