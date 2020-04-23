@@ -15,7 +15,11 @@ namespace AlmostHome.Pages.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // check if admin is logged in. if not redeirect to Admin Login page
+            if (Session["Admin"] == null)
+            {
+                Response.Redirect("/Pages/Login");
+            }
         }
 
         [WebMethod]
@@ -44,6 +48,19 @@ namespace AlmostHome.Pages.Admin
         public static int[] GetWeeklyRehomedAnimals()
         {
             return Animal.GetWeeklyRehomedAnimals();
+        }
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static int GetAnimalCounts(bool rehomed, bool all)
+        {
+            return Animal.GetAnimalCounts(rehomed, all);
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static int GetVolunteerCount()
+        {
+            return Models.Volunteer.GetVolunteerCount();
         }
     }
     

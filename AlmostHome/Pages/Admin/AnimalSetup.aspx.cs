@@ -20,16 +20,32 @@ namespace AlmostHome.Pages.Admin
             }
             if (!Page.IsPostBack)
             {
-                LoadAnimals();
+                LoadActiveAnimals();
+                LoadRehomedAnimals();
             }
         }
 
 
 
-        private void LoadAnimals()
+        private void LoadActiveAnimals()
         {
-            lstAnimal.DataSource = Animal.GetAnimal();
+            lstAnimal.DataSource = Animal.GetAnimal(false);
             lstAnimal.DataBind();
+        }
+
+        private void LoadRehomedAnimals()
+        {
+            lstRehomed.DataSource = Animal.GetAnimal(true);
+            lstRehomed.DataBind();
+        }
+
+        protected void btnMoveToActive_OnClick(object sender, EventArgs e)
+        {
+            Button button = (sender as Button);
+            int animalId = Convert.ToInt32(button.Attributes["AnimalID"]);
+            Animal.MoveToAvailable(animalId);
+            LoadActiveAnimals();
+            LoadRehomedAnimals();
         }
     }
 }

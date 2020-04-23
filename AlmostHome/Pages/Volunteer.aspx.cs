@@ -17,7 +17,7 @@ namespace AlmostHome
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            panelMsgPopup.Visible = false;
         }
 
         protected void btnSubmitQuiz_Click(object sender, EventArgs e)
@@ -41,18 +41,19 @@ namespace AlmostHome
                     }
                     else
                     {
+                        VolunteerApplication.UpdateFailedAttempt(txtEmail.Text);
                         QuizFailed("Sorry you do not meet our volunteering requirements. Please try again in 6 months time.");
+
                     }
                 }
             }
             catch (Exception ex)
             {
-                lblMsgBody.Text = "Unknown Error! Please try again later.";
-                panelMsgPopup.Visible = true;
+                ShowMessage("Unknown Error! Please try again later.");
             }
         }
 
-        public void QuizFailed(string message)
+        private void QuizFailed(string message)
         {
             txtContactNumber.Visible = false;
             ddlPreferredUnit.Visible = false;
@@ -69,7 +70,7 @@ namespace AlmostHome
 
         }
 
-        public int CalculateScore()
+        private int CalculateScore()
         {
             int score = 0;
             if (RadioQ1.SelectedValue.ToString() == "1")
@@ -100,7 +101,7 @@ namespace AlmostHome
             return score;
         }
 
-        public void QuizPassed()
+        private void QuizPassed()
         {
             lblPopupHeader.Text = "Begin Application";
             txtContactNumber.Visible = true;
@@ -113,13 +114,13 @@ namespace AlmostHome
             ddlPreferredUnit.DataTextField = "Value";
             ddlPreferredUnit.DataValueField = "ID";
             ddlPreferredUnit.DataBind();
-            ddlPreferredUnit.Items.Insert(0, new ListItem("- Select Preferred Unit -", "0"));
+            ddlPreferredUnit.Items.Insert(0, new ListItem("- Select Preferred Unit -", ""));
 
             ddlAvailability.DataSource = Setting.AvailabilityList();
             ddlAvailability.DataTextField = "Value";
             ddlAvailability.DataValueField = "ID";
             ddlAvailability.DataBind();
-            ddlAvailability.Items.Insert(0, new ListItem("- Select Availability -", "0"));
+            ddlAvailability.Items.Insert(0, new ListItem("- Select Availability -", ""));
 
             lblPopupBody.Visible = false;
             panelBody.Visible = true;
@@ -147,15 +148,13 @@ namespace AlmostHome
                 string emailBody = Email.PopulateBody(volunteerApplication.VolunteerName.Split(' ')[0], message);
                 Email.SendEmail(volunteerApplication.EmailAddress, "Volunteer Application", emailBody);
 
-                lblMsgBody.Text = "Application Submitted!";
-                panelMsgPopup.Visible = true;
+                ShowMessage("Application Submitted!");
                 ClearAll();
 
             }
             catch (Exception ex)
             {
-                lblMsgBody.Text = "Application Submission Failed!";
-                panelMsgPopup.Visible = true;
+                ShowMessage("Application Submission Failed!");
             }
             finally
             {
@@ -165,7 +164,7 @@ namespace AlmostHome
             
         }
 
-        public void ClearAll()
+        private void ClearAll()
         {
             txtName.Text = "";
             txtEmail.Text = "";
@@ -177,11 +176,12 @@ namespace AlmostHome
             RadioQ3.SelectedIndex = -1;
             RadioQ4.SelectedIndex = -1;
             RadioQ5.SelectedIndex = -1;
-
         }
 
-       
-
-       
+        private void ShowMessage(string messageText)
+        {
+            lblMsgBody.Text = messageText;
+            panelMsgPopup.Visible = true;
+        }
     }
 }

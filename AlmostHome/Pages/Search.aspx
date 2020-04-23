@@ -59,7 +59,7 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="ddlOtherPets">Secure Garden</label>
+                            <label for="ddlOtherPets">Other Pets</label>
                             <asp:DropDownList ID="ddlOtherPets" runat="server" class="form-control">
                                 <asp:ListItem Value="True">Yes</asp:ListItem>
                                 <asp:ListItem Value="False">No</asp:ListItem>
@@ -98,7 +98,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-body">
-                                                <img alt="" src="/images/ImageAnimals/<%# Eval("ImageUrl").ToString()==""? "default.png" : Eval("ImageUrl") %>" height="75" width="75" />
+                                                <img alt="" src="/images/ImageAnimals/<%# Eval("ImageUrl").ToString()==""? "default.png" : Eval("ImageUrl") %>" height="75" width="75" style="min-height: 75px"/>
                                                 <div class="mt-1">
                                                     <p>Age: <%#Eval("AnimalAge")%></p>
                                                 </div>

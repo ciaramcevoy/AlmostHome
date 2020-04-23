@@ -76,13 +76,13 @@ namespace AlmostHome.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtContactNumber;
         
         /// <summary>
-        /// RequiredFieldValidatorContactNumber control.
+        /// CustomValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorContactNumber;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
         
         /// <summary>
         /// txtEmailAddress control.

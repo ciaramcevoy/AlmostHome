@@ -28,7 +28,7 @@
                 </div>
             </div>
         </asp:Panel>
-        <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto" />
+        <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto col-sm-12" />
         <div class="section text-center" style="padding: 0 0;">
             <div class="row shadow">
                 <div class="card-body">
@@ -67,8 +67,7 @@
                                 </div>
                                 <asp:TextBox runat="server" ID="txtContactNumber" CssClass="form-control" TextMode="Number" placeholder="Contact Number" />
                             </div>
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContactNumber"
-                                CssClass="text-danger" ErrorMessage="Contact Number is required." />
+                            <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Please enter a valid Contact Number." CssClass="text-danger" Display="Dynamic" ClientValidationFunction="ValidateContactNumberClient" EnableClientScript="True"></asp:CustomValidator>
                         </div>
                     </div>
                     <div class="row">
@@ -142,6 +141,17 @@
                     window.location = url;
                 }
             }, 1000);
+        }
+
+        //https://stackoverflow.com/questions/701029/asp-net-custom-validator-client-side-server-side-validation-not-firing
+        function ValidateContactNumberClient(sender, args) {
+            var v = document.getElementById('<%=txtContactNumber.ClientID%>').value;
+            if (v.length == 11) {
+                args.IsValid = true; 
+            }
+            else {
+                args.IsValid = false;
+            }
         }
     </script>
 </asp:Content>

@@ -562,15 +562,15 @@
 
 
 .list-view-filter li {
-    background-color: #6f6b6b;
+    background-color: #797979;
     color: white;
     border-radius: 3px;
     margin-bottom: 10px;
     transition: 0.3s;
-    cursor:pointer;
+    cursor: pointer;
 }
     .list-view-filter li:hover {
-        background-color: #423232;
+        background-color: #6f6565;
     }
     .list.list-view-filter {
         flex-direction: column;

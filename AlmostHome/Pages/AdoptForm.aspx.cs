@@ -49,14 +49,18 @@ namespace AlmostHome.Pages
 
                 //save application
                 AnimalApplication.SaveAnimalApplication(application);
+                //get animal
+                Animal animal = Animal.GetAnimalByAnimalID(application.AnimalID.ToString());
 
                 //send email to admin
-                string adminMessage = "New adoption request submitted for Animal ID : " + application.AnimalID + " by " + applicant.ApplicantName + "(Contact No. " + applicant.ContactNumber + ")";
+                string adminMessage = "New adoption request submitted for " + animal.AnimalName + " by " + applicant.ApplicantName + "(Contact No. " + applicant.ContactNumber + ")";
                 string adminEmailBody = Email.PopulateBody("Team", adminMessage);
                 Email.SendEmail("almosthomestatusapplication@gmail.com", "New Adoption Request Received - Applicant ID " + application.ApplicantID, adminEmailBody);
+                
+                
 
                 //send email to applicant
-                string applicantMessage = "Your adoption request submitted for Animal ID : " + application.AnimalID + " successfully.";
+                string applicantMessage = "Your adoption request submitted for " + animal.AnimalName + " successfully.";
                 string applicantEmailBody = Email.PopulateBody(applicant.ApplicantName.Split(' ')[0], applicantMessage);
                 Email.SendEmail(applicant.EmailAddress, "Adoption Application Submitted", applicantEmailBody);
 

@@ -49,7 +49,7 @@ namespace AlmostHome.Models
             return dataSet;
         }
 
-        public static void UpdateAnimalApplicationStatus(int applicationID, int status, int animalID)
+        public static void UpdateAnimalApplicationStatus(int applicationID, int status, int animalID, int adminId)
         {
             //getting the database connectivity
             SqlConnection con = new SqlConnection(DBCon.GetDBCon());
@@ -59,7 +59,8 @@ namespace AlmostHome.Models
             //setting parameters
             cmd.Parameters.AddWithValue("ApplicationID", applicationID);
             cmd.Parameters.AddWithValue("Status", status);
-            cmd.Parameters.AddWithValue("AnimalID", animalID); 
+            cmd.Parameters.AddWithValue("AnimalID", animalID);
+            cmd.Parameters.AddWithValue("AdminID", adminId);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
@@ -68,7 +69,7 @@ namespace AlmostHome.Models
         public static void SendEmailToApplicant(int applicationID, int statusId)
         {
             //get applicant details
-            Applicant applicant = Applicant.GetApplicantByApplicantID(applicationID);
+            Applicant applicant = Applicant.GetApplicantByApplicationId(applicationID);
             //send email
             string status = Setting.AnimalApplicationStatusList().Find(x => x.ID == Convert.ToInt32(statusId)).Value;
             string message = "Your adoption application status is updated to " + status;

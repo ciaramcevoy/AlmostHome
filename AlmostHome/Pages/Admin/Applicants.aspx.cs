@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -35,21 +36,29 @@ namespace AlmostHome.Pages.Admin
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            //https://www.c-sharpcorner.com/UploadFile/1326ef/transactionscope-in-C-Sharp/
+            using (TransactionScope transactionScope = new TransactionScope())
             {
-                DropDownList dropDownList = sender as DropDownList;
-                int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
-                int applicationID = Convert.ToInt32(dropDownList.Attributes["applicationID"]);
-                int animalID = Convert.ToInt32(dropDownList.Attributes["animalID"]);
-                AnimalApplication.UpdateAnimalApplicationStatus(applicationID, selectedValue, animalID);
-                AnimalApplication.SendEmailToApplicant(applicationID, selectedValue);
-                BindAnimalApplicationData();
-            }
-            catch (Exception ex)
-            {
+                try
+                {
+                    Models.Admin admin = (Models.Admin) Session["Admin"];
+                    DropDownList dropDownList = sender as DropDownList;
+                    int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
+                    int applicationID = Convert.ToInt32(dropDownList.Attributes["applicationID"]);
+                    int animalID = Convert.ToInt32(dropDownList.Attributes["animalID"]);
+                    AnimalApplication.UpdateAnimalApplicationStatus(applicationID, selectedValue, animalID, admin.AdminID);
+                    AnimalApplication.SendEmailToApplicant(applicationID, selectedValue);
 
-            }
+                    transactionScope.Complete();
+                    transactionScope.Dispose();
 
+                    BindAnimalApplicationData();
+                }
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                }
+            }
         }
 
         protected void lstGrid_OnItemDataBound(object sender, ListViewItemEventArgs e)

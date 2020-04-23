@@ -17502,7 +17502,7 @@ footer .pull-center {
   }
   .navbar-collapse {
     position: fixed;
-    display: block;
+    display: block !important;
     top: 0px;
     height: 100vh;
     width: 230px;

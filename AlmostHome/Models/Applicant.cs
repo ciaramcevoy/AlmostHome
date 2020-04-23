@@ -33,7 +33,7 @@ namespace AlmostHome.Models
             return applicantId;
         }
 
-        public static Applicant GetApplicantByApplicantID(int applicantID)
+        public static Applicant GetApplicantByApplicationId(int applicationId)
         {
             SqlConnection con = new SqlConnection(DBCon.GetDBCon());
             SqlDataReader rd;
@@ -43,11 +43,11 @@ namespace AlmostHome.Models
             using (con)
             {
                 // Getting the database connectivity using stored procedure
-                SqlCommand cmd = new SqlCommand("sp_get_ApplicantByApplicantID", con);
+                SqlCommand cmd = new SqlCommand("sp_get_ApplicantByApplicationId", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Passing parameters
-                cmd.Parameters.AddWithValue("ApplicantID", applicantID);
+                cmd.Parameters.AddWithValue("ApplicationID", applicationId);
 
                 con.Open();
                 rd = cmd.ExecuteReader();

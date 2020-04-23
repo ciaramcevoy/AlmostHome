@@ -66,5 +66,13 @@ namespace AlmostHome.Pages.Admin
             lblSuccess.Text = message;
             panelSuccess.Visible = true;
         }
+
+        protected void btnDelete_OnClick(object sender, EventArgs e)
+        {
+            Button button = (sender as Button);
+            int animalTypeID = Convert.ToInt32(button.Attributes["AnimalTypeID"]);
+            AnimalType.DeleteAnimalType(animalTypeID);
+            LoadTypes();
+        }
     }
 }

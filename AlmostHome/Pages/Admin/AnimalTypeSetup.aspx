@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="AnimalTypeSetup.aspx.cs" Inherits="AlmostHome.Pages.Admin.AnimalTypeSetup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master/almostHome.Master" AutoEventWireup="true" CodeBehind="AnimalTypeSetup.aspx.cs" Inherits="AlmostHome.Pages.Admin.AnimalTypeSetup" EnableEventValidation="false" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container main-content">
@@ -36,7 +36,7 @@
                 </a>
                 <h3 class="background"><span>Animals Types</span></h3>
                 <div class="row">
-                    <div class="col-md-4 card">
+                    <div class="col-md-6 card">
                         <div class="card-body">
                             <h4 class="card-title">Add New Animal Type</h4>
                             <div class="col-md-12">
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8 card">
+                    <div class="col-md-6 card">
                         <div class="card-body">
                             <h4 class="card-title">List of Available Animal Types</h4>
                             <div class="ml-10 text-left">
@@ -69,7 +69,7 @@
                                             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
                                         </LayoutTemplate>
                                         <ItemTemplate>
-                                            <li><%#Eval("Type")%></li>
+                                            <li><span><%#Eval("Type")%></span><asp:Button ID="btnDelete" runat="server" AnimalTypeID='<%#Eval("AnimalTypeID")%>' Text="X" CssClass="btn-sm btn btn-danger float-right mt-0" OnClick="btnDelete_OnClick" CausesValidation="False"/></li>
                                         </ItemTemplate>
                                     </asp:ListView>
                                 </ol>

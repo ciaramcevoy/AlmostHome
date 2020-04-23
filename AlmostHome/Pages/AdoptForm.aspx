@@ -45,9 +45,7 @@
                         <div class="form-group">
                             <label for="txtContactNumber" style="position: static;">Contact Number</label>
                             <asp:TextBox ID="txtContactNumber" runat="server" class="form-control" TextMode="Number"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidatorContactNumber" runat="server"
-                                ControlToValidate="txtContactNumber" ErrorMessage="The Contact Number field is required."
-                                ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Please enter a valid Contact Number." CssClass="text-danger" Display="Dynamic" ClientValidationFunction="ValidateContactNumberClient" EnableClientScript="True"></asp:CustomValidator>
                         </div>
                         <div class="form-group">
                             <label for="txtEmailAddress" style="position: static;">Email Address</label>
@@ -103,6 +101,16 @@
                     window.location = url;
                 }
             }, 1000);
+        }
+
+        function ValidateContactNumberClient(sender, args) {
+            var v = document.getElementById('<%=txtContactNumber.ClientID%>').value;
+            if (v.length == 11) {
+                args.IsValid = true;  
+            }
+            else {
+                args.IsValid = false;
+            }
         }
     </script>
 </asp:Content>

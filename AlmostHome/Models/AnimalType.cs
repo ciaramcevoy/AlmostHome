@@ -57,6 +57,16 @@ namespace AlmostHome.Models
             cmd.ExecuteNonQuery();
             con.Close();
         }
-       
+
+        public static void DeleteAnimalType(int animalTypeID)
+        {
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            SqlCommand cmd = new SqlCommand("sp_delete_AnimalType", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("AnimalTypeID", animalTypeID);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

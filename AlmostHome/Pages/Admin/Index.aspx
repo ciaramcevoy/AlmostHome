@@ -4,7 +4,7 @@
     <div class="container main-content">
 
         <div class="row card-body button-panel">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/Dashboard.aspx" aria-selected="false">
                         <div class="info ">
@@ -18,7 +18,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/Reports.aspx" aria-selected="false">
                         <div class="info ">
@@ -33,7 +33,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/Applicants.aspx" aria-selected="false">
                         <div class="info ">
@@ -48,7 +48,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/Volunteers.aspx" aria-selected="false">
                         <div class="info ">
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/AnimalSetup.aspx" aria-selected="false">
                         <div class="info ">
@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/AnimalTypeSetup.aspx" aria-selected="false">
                         <div class="info ">
@@ -96,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="card">
                     <a class="btn-box" href="/Pages/Admin/ReviewSuccessStories.aspx" aria-selected="false">
                         <div class="info ">

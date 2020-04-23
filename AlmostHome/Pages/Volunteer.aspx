@@ -113,7 +113,7 @@
                             <asp:TextBox ID="txtName" runat="server" class="form-control" placeholder="Name"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="Email"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" class="form-control email" placeholder="Email" ></asp:TextBox>
                         </div>
                         <div class="f1-buttons">
                             <button type="button" class="btn btn-next">Next</button>
@@ -217,10 +217,12 @@
                                     <div class="form-group">
                                         <div class="small">Contact Number</div>
                                         <asp:TextBox ID="txtContactNumber" runat="server" Visible="False" class="form-control" TextMode="Number"></asp:TextBox>
+                                        <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Please enter a valid Contact Number." CssClass="text-danger" Display="Dynamic" ClientValidationFunction="ValidateContactNumberClient" EnableClientScript="True"></asp:CustomValidator>
                                     </div>
                                     <div class="form-group">
                                         <div class="small">Preferred Unit</div>
                                         <asp:DropDownList ID="ddlPreferredUnit" class="form-control"  runat="server" Visible="False"></asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please select a Preferred Unit." CssClass="text-danger" ControlToValidate="ddlPreferredUnit"></asp:RequiredFieldValidator>
                                     </div>
 
                                     <div class="form-group">
@@ -230,6 +232,7 @@
                                             <asp:ListItem Text="Afternoons" Value="2"></asp:ListItem>
                                             <asp:ListItem Text="Evenings" Value="3"></asp:ListItem>
                                         </asp:DropDownList>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please select your Availability." CssClass="text-danger" ControlToValidate="ddlAvailability"></asp:RequiredFieldValidator>
                                     </div>
                                 </div>
                             </asp:Panel>
@@ -277,5 +280,15 @@
             $("#volunteerModal").modal('show');
             $("#msgModal").modal('show');
         });
+
+        function ValidateContactNumberClient(sender, args) {
+            var v = document.getElementById('<%=txtContactNumber.ClientID%>').value;
+            if (v.length == 11) {
+                args.IsValid = true;  
+            }
+            else {
+                args.IsValid = false;
+            }
+        }
     </script>
 </asp:Content>

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AlmostHome.Models;
 using System.Data;
+using System.Transactions;
 
 namespace AlmostHome.Pages.Admin
 {
@@ -25,7 +26,7 @@ namespace AlmostHome.Pages.Admin
             }
         }
 
-        public void BindVolunteerApplicationData()
+        private void BindVolunteerApplicationData()
         {
             lstGrid.DataSource = VolunteerApplication.GetVolunteerApplication(true);
             lstGrid.DataBind();
@@ -35,17 +36,27 @@ namespace AlmostHome.Pages.Admin
 
         protected void ddlStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            //https://www.c-sharpcorner.com/UploadFile/1326ef/transactionscope-in-C-Sharp/
+            using (TransactionScope transactionScope = new TransactionScope())
             {
-                DropDownList dropDownList = sender as DropDownList;
-                int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
-                int volunteerApplicationID = Convert.ToInt32(dropDownList.Attributes["volunteerApplicationID"]);
-                VolunteerApplication.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue);
-                VolunteerApplication.SendEmailToApplicant(volunteerApplicationID, selectedValue);
-                BindVolunteerApplicationData();
-            }
-            catch (Exception ex)
-            {
+
+                try
+                {
+                    Models.Admin admin = (Models.Admin)Session["Admin"];
+                    DropDownList dropDownList = sender as DropDownList;
+                    int selectedValue = Convert.ToInt32(dropDownList.SelectedItem.Value);
+                    int volunteerApplicationID = Convert.ToInt32(dropDownList.Attributes["volunteerApplicationID"]);
+                    VolunteerApplication.UpdateVolunteerApplicationStatus(volunteerApplicationID, selectedValue, admin.AdminID);
+                    VolunteerApplication.SendEmailToApplicant(volunteerApplicationID, selectedValue);
+                    transactionScope.Complete();
+                    transactionScope.Dispose();
+
+                    BindVolunteerApplicationData();
+                }
+                catch (Exception ex)
+                {
+                    transactionScope.Dispose();
+                }
 
             }
 

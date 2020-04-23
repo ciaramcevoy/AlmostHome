@@ -55,7 +55,15 @@ jQuery(document).ready(function() {
     		}
     		else {
     			$(this).removeClass('input-error');
-    		}
+            }
+            
+            if ($(this).hasClass('email') && !isEmail($(this).val())) {
+                $(this).addClass('input-error');
+                next_step = false;
+            }
+            else {
+                $(this).removeClass('input-error');
+            }
     	});
     	// fields validation
     	
@@ -111,3 +119,7 @@ jQuery(document).ready(function() {
     
     
 });
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}

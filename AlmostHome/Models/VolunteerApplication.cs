@@ -39,8 +39,7 @@ namespace AlmostHome.Models
             return dataSet;
 
         }
-
-        public static void UpdateVolunteerApplicationStatus(int volunteerApplicationID, int status)
+        public static void UpdateVolunteerApplicationStatus(int volunteerApplicationID, int status, int adminId)
         {
             //getting the database connectivity
             SqlConnection con = new SqlConnection(DBCon.GetDBCon());
@@ -50,11 +49,11 @@ namespace AlmostHome.Models
             //setting parameters
             cmd.Parameters.AddWithValue("VolunteerApplicationID", volunteerApplicationID);
             cmd.Parameters.AddWithValue("Status", status);
+            cmd.Parameters.AddWithValue("AdminId", adminId);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
         public static void SendEmailToApplicant(int volunteerApplicationID, int statusId)
         {
             //get applicant details
@@ -66,7 +65,6 @@ namespace AlmostHome.Models
             Email.SendEmail(applicant.EmailAddress, "Volunteer Application Status Updated", emailBody);
 
         }
-
         public static bool Validate(string emailAddress)
         {
 
@@ -89,7 +87,6 @@ namespace AlmostHome.Models
 
             return true;
         }
-
         public static void SaveVolunteerApplication(VolunteerApplication volunteerApplication)
         {
             //getting the database connectivity
@@ -109,7 +106,6 @@ namespace AlmostHome.Models
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
         public static VolunteerApplication GetVolunteerApplicationByID(int volunteerApplicationID)
         {
             //declare object 
@@ -143,7 +139,6 @@ namespace AlmostHome.Models
             con.Close();
             return volunteerApplication;
         }
-
         public static int[] GetWeeklyVolunteerApplicants()
         {
             Dictionary<string, int> dict = new Dictionary<string, int>
@@ -157,7 +152,6 @@ namespace AlmostHome.Models
                 {"Sunday ", 0}
             };
 
-            List<int> list = new List<int>(); ;
             SqlDataReader rd;
             using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
             {
@@ -175,6 +169,19 @@ namespace AlmostHome.Models
                 rd.Close();
             }
             return dict.Values.ToArray();
+        }
+        public static void UpdateFailedAttempt(string emailAddress)
+        {
+            //getting the database connectivity
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            //set command type as stored procedure
+            SqlCommand cmd = new SqlCommand("sp_update_FailedAttempt", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //setting parameters
+            cmd.Parameters.AddWithValue("email", emailAddress);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
     

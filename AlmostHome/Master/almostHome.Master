@@ -29,7 +29,7 @@
         <nav class="navbar navbar-expand-lg bg-primary fixed-top" id="sectionsNav">
             <div class="container">
                 <div class="navbar-translate">
-                    <a class="navbar-brand" href="Default.aspx">
+                    <a class="navbar-brand" href="/Pages/Default.aspx">
                         <div class='logo'>
                             <img src="/images/icons/paw.svg" />
                         </div>

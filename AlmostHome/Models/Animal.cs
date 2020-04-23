@@ -40,13 +40,14 @@ namespace AlmostHome.Models
             con.Close();
         }
         
-        public static DataSet GetAnimal()
+        public static DataSet GetAnimal(bool rehomed)
         {
             DataSet dataSet = new DataSet("dt");
             using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
             {
                 SqlCommand cmd = new SqlCommand("sp_get_Animals", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("rehomed", rehomed);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
                 da.Fill(dataSet);
@@ -194,7 +195,41 @@ namespace AlmostHome.Models
             //https://stackoverflow.com/questions/197059/convert-dictionary-values-into-array
             return dict.Values.ToArray();
         }
+
+        public static int GetAnimalCounts(bool rehomed, bool all)
+        {
+            int count = 0;
+            using (SqlConnection con = new SqlConnection(DBCon.GetDBCon()))
+            {
+                SqlCommand cmd = new SqlCommand("sp_get_AnimalCount", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("rehomed", rehomed);
+                cmd.Parameters.AddWithValue("all", all);
+                con.Open();
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+                con.Close();
+            }
+
+            return count;
+        }
+
+
+        public static void MoveToAvailable(int animalID)
+        {
+            //getting the database connectivity
+            SqlConnection con = new SqlConnection(DBCon.GetDBCon());
+            //set command type as stored procedure
+            SqlCommand cmd = new SqlCommand("sp_MoveToActive", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //setting parameters
+            cmd.Parameters.AddWithValue("AnimalID", animalID);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
+
 
     public class TypeObject
     {
