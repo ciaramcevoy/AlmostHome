@@ -168,8 +168,8 @@ namespace AlmostHome
         {
             txtName.Text = "";
             txtEmail.Text = "";
-            ddlAvailability.SelectedValue = "0";
-            ddlPreferredUnit.SelectedValue = "0";
+            ddlAvailability.SelectedValue = "";
+            ddlPreferredUnit.SelectedValue = "";
             txtContactNumber.Text = "";
             RadioQ1.SelectedIndex = -1;
             RadioQ2.SelectedIndex = -1;
