@@ -74,7 +74,7 @@
     <script src="/Scripts/bootstrap-datetimepicker.js"></script>
     <script type="text/javascript">
         $('.datetimepicker').datetimepicker({
-            format: 'MM/DD/YYYY',
+            format: 'DD/MM/YYYY',
             icons: {
                 time: "fa fa-clock-o",
                 date: "fa fa-calendar",

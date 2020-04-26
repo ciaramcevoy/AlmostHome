@@ -37,7 +37,7 @@ namespace AlmostHome.Pages.Admin
                 }
                 else
                 {
-                    ShowError("The Animal Type already exist in the database. Please use an unique type.");
+                    ShowError("This Animal Type already exists in the database. Please use a unique type.");
                 }
 
             }

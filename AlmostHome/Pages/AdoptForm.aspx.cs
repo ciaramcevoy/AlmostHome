@@ -32,7 +32,7 @@ namespace AlmostHome.Pages
         {
             try
             {
-                //create applicant obejct
+                //create applicant object
                 Applicant applicant = new Applicant();
                 applicant.ApplicantName = txtApplicantName.Text;
                 applicant.ContactNumber = txtContactNumber.Text;
