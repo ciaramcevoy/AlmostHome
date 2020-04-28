@@ -28,7 +28,7 @@
                 </div>
             </div>
         </asp:Panel>
-        <img src="/images/contact-banner.gif" class="d-block ml-auto mr-auto col-sm-12" />
+        <img src="/images/contact us.jpeg" class="d-block ml-auto mr-auto col-sm-6" />
         <div class="section text-center" style="padding: 0 0;">
             <div class="row shadow">
                 <div class="card-body">
