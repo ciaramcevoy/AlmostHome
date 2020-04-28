@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">    
     <div class="container main-content">
-        <img src="/images/adoptme-banner2.jpg" class="d-block ml-auto mr-auto w-75"/>
+        <img src="/images/SuccessStory/adopt.jpeg" class="d-block ml-auto mr-auto w-72"/>
         <div class="section text-center row" style="padding: 0 0;">
             <div class="adopt-content shadow">
                 <h4 class="title">Adopting an Animal from Almost Home</h4>

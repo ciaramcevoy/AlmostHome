@@ -22,7 +22,7 @@
                 <div class="card col-md-3">
                     <a href="Volunteer.aspx" class="image image-full">
                         <div class="card-header">
-                            <img src="/images/Volunteer.png" height="150" alt="" />
+                            <img src="/images/Homepage2.jpeg" height="150" alt="" />
                         </div>
 
                     </a>
@@ -34,7 +34,7 @@
                 <div class="card col-md-3">
                     <a href="Adopt.aspx" class="image image-full">
                         <div class="card-header">
-                            <img src="/images/dog3.jpg" height="150" alt="" />
+                            <img src="/images/homepage1.jpg" height="150" alt="" />
 
                         </div>
                     </a>
@@ -46,7 +46,7 @@
                 <div class="card col-md-3">
                     <a href="SuccessStories.aspx" class="image image-full">
                         <div class="card-header">
-                            <img src="/images/Success.jpg" height="150" alt="" />
+                            <img src="/images/Homepage3.jpeg" height="150" alt="" />
 
                         </div>
                     </a>

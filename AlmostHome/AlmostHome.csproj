@@ -135,6 +135,9 @@
     <Content Include="images\Cat1.jpg" />
     <Content Include="images\contact-banner.gif" />
     <Content Include="images\Hamster.jpg" />
+    <Content Include="images\homepage1.jpg" />
+    <Content Include="images\Homepage2.jpeg" />
+    <Content Include="images\Homepage3.jpeg" />
     <Content Include="images\icons\five.svg" />
     <Content Include="images\icons\four.svg" />
     <Content Include="images\icons\one.svg" />
@@ -144,7 +147,11 @@
     <Content Include="images\img\aboutus1.jpg" />
     <Content Include="images\img\aboutus2.jpg" />
     <Content Include="images\img\aboutus3.jpg" />
+    <Content Include="images\img\c1.jpeg" />
+    <Content Include="images\img\c2.jpeg" />
+    <Content Include="images\img\c3.jpeg" />
     <Content Include="images\img\main-banner.jpg" />
+    <Content Include="images\SuccessStory\adopt.jpeg" />
     <Content Include="images\SuccessStory\story1.jpeg" />
     <Content Include="images\SuccessStory\story2.jpeg" />
     <Content Include="images\SuccessStory\story3.jpeg" />
