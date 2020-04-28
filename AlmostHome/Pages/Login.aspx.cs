@@ -33,15 +33,15 @@ namespace AlmostHome
 
                 if (adminModel == null)
                 {
-                    // if admin object is not filled, displaying invalid login details message
+                    // if admin object is not filled, display invalid login details message
                     ShowError("Invalid Username.");
                 }
                 else
                 {
-                    //comapre password
+                    //compare password
                     if (txtPassword.Text == Encryption.Decrypt(adminModel.Password))
                     {
-                        // if login success, stores admin object into a session and redirects to Admin page
+                        // if login is success, stores admin object into a session and redirects to Admin page
                         Session["Admin"] = adminModel;
                         Response.Redirect("/Pages/Admin/Index");
                     }

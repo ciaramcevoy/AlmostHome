@@ -12,7 +12,7 @@ namespace AlmostHome.Pages.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // check if admin is logged in. if not redeirect to Admin Login page
+            // check if admin is logged in. if not redirect to Admin Login page
             if (Session["Admin"] == null)
             {
                 Response.Redirect("/Pages/Login");

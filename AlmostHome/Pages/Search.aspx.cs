@@ -25,7 +25,7 @@ namespace AlmostHome
                 //cast session into Animal object
                 Animal animalFilter = (Animal) Session["AnimalFilter"];
 
-                //set filter values using settion object
+                //set filter values using session object
                 ddlAnimalType.SelectedValue = animalFilter.AnimalType.ToString();
                 ddlAnimalAge.SelectedValue = animalFilter.AnimalAge.ToString();
                 ddlChildren.SelectedValue = animalFilter.Children.ToString();
